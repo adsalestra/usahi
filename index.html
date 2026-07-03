@@ -168,7 +168,10 @@ body{font-family:'Inter',sans-serif;color:#1e293b;line-height:1.6;overflow-x:hid
 /* TEAM */
 .team-section{padding:80px 0;background:var(--light)}
 .team-video-wrap{position:relative;border-radius:20px;overflow:hidden;box-shadow:var(--shadow-lg);margin-top:48px;aspect-ratio:16/7}
-.team-video-wrap video{width:100%;height:100%;object-fit:cover}
+.team-video-wrap video,.team-video-wrap .yt-crop-fill{width:100%;height:100%;object-fit:cover}
+.yt-crop-fill{position:absolute;inset:-60px -10px;overflow:hidden;pointer-events:none}
+.yt-crop-fill iframe{width:calc(100% + 20px);height:calc(100% + 120px);border:none;position:absolute;top:-60px;left:-10px}
+.yt-crop-fill+.sound-toggle,.yt-crop-fill+.sound-toggle+.video-pause-btn,.yt-crop-fill~.sound-toggle,.yt-crop-fill~.video-pause-btn{pointer-events:auto;z-index:20}
 .team-video-overlay{position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(36,91,143,.9));padding:40px;color:var(--white)}
 .team-video-overlay h3{font-family:'Playfair Display',serif;font-size:28px;margin-bottom:8px}
 .team-video-overlay p{opacity:.85;font-size:15px}
@@ -180,8 +183,10 @@ body{font-family:'Inter',sans-serif;color:#1e293b;line-height:1.6;overflow-x:hid
 
 /* BEHIND THE SCENES — local video background */
 .bts-section{position:relative;padding:100px 0;overflow:hidden;min-height:450px}
-.bts-bg{position:absolute;inset:0;z-index:0}
-.bts-bg video{width:100%;height:100%;object-fit:cover}
+.bts-bg{position:absolute;inset:0;z-index:0;overflow:hidden}
+.bts-bg video,.bts-bg iframe{width:100%;height:100%;object-fit:cover;border:none}
+.bts-bg .yt-crop-bg{position:absolute;inset:-80px -20px;pointer-events:none}
+.bts-bg .yt-crop-bg iframe{width:calc(100% + 40px);height:calc(100% + 160px);position:absolute;top:-80px;left:-20px;border:none}
 .bts-overlay{position:absolute;inset:0;z-index:1;background:linear-gradient(135deg,rgba(36,91,143,.9),rgba(0,0,0,.8))}
 .bts-content{position:relative;z-index:2;text-align:center;color:var(--white)}
 .bts-content h2{font-family:'Playfair Display',serif;font-size:clamp(28px,4vw,48px);font-weight:800;margin-bottom:16px}
@@ -191,7 +196,8 @@ body{font-family:'Inter',sans-serif;color:#1e293b;line-height:1.6;overflow-x:hid
 .why-section{padding:80px 0;background:var(--white)}
 .why-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;margin-top:48px}
 .why-video{position:relative;border-radius:20px;overflow:hidden;aspect-ratio:16/9;box-shadow:var(--shadow-lg)}
-.why-video video{width:100%;height:100%;object-fit:cover}
+.why-video video,.why-video .yt-crop-fill{width:100%;height:100%;object-fit:cover}
+.why-video .sound-toggle,.why-video .video-pause-btn{pointer-events:auto;z-index:20}
 .why-video-play{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,.2);cursor:pointer;transition:background .3s}
 .why-video-play:hover{background:rgba(0,0,0,.35)}
 .why-video-play .play-btn{width:64px;height:64px;border-radius:50%;background:var(--white);display:flex;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(0,0,0,.2)}
@@ -225,7 +231,8 @@ body{font-family:'Inter',sans-serif;color:#1e293b;line-height:1.6;overflow-x:hid
 .testing-section{padding:80px 0;background:var(--white)}
 .testing-grid{display:grid;grid-template-columns:1fr 1fr;gap:32px;margin-top:48px}
 .testing-card{position:relative;border-radius:var(--radius);overflow:hidden;aspect-ratio:9/16;max-height:600px;box-shadow:var(--shadow)}
-.testing-card video{width:100%;height:100%;object-fit:cover}
+.testing-card video,.testing-card .yt-crop-fill{width:100%;height:100%;object-fit:cover}
+.testing-card .sound-toggle,.testing-card .video-pause-btn{pointer-events:auto;z-index:20}
 .testing-card .testing-play{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,.2);cursor:pointer;transition:background .3s}
 .testing-card .testing-play:hover{background:rgba(0,0,0,.35)}
 .testing-card .testing-play .play-btn{width:56px;height:56px;border-radius:50%;background:var(--white);display:flex;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(0,0,0,.2)}
@@ -279,7 +286,8 @@ body{font-family:'Inter',sans-serif;color:#1e293b;line-height:1.6;overflow-x:hid
 .ig-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:40px}
 .ig-card{position:relative;border-radius:var(--radius);overflow:hidden;aspect-ratio:9/16;max-height:500px;box-shadow:var(--shadow);cursor:pointer;transition:all .3s}
 .ig-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-lg)}
-.ig-card video{width:100%;height:100%;object-fit:cover}
+.ig-card video,.ig-card .yt-crop-fill{width:100%;height:100%;object-fit:cover}
+.ig-card .ig-overlay{pointer-events:auto;z-index:10}
 .ig-card .ig-overlay{position:absolute;inset:0;background:linear-gradient(180deg,transparent 60%,rgba(0,0,0,.6) 100%);display:flex;align-items:flex-end;padding:20px;transition:background .3s}
 .ig-card:hover .ig-overlay{background:linear-gradient(180deg,transparent 40%,rgba(0,0,0,.7) 100%)}
 .ig-card .ig-overlay span{color:#fff;font-size:14px;font-weight:600;display:flex;align-items:center;gap:8px}
@@ -603,11 +611,10 @@ body{font-family:'Inter',sans-serif;color:#1e293b;line-height:1.6;overflow-x:hid
       <p class="section-subtitle" style="margin:0 auto">Our skilled team of project managers, installers, and support staff are dedicated to delivering the highest quality work on every job.</p>
     </div>
     <div class="team-video-wrap reveal">
-      <video id="teamVideo" autoplay muted loop playsinline>
-        <source src="assets/videos/team.mov" type="video/quicktime">
-        <source src="assets/videos/team.mov" type="video/mp4">
-      </video>
-      <button class="sound-toggle" onclick="toggleVideoSound('teamVideo',this)" aria-label="Toggle sound">
+      <div class="yt-crop-fill">
+        <iframe id="teamYT" src="https://www.youtube.com/embed/bK6g7fMpJyo?autoplay=1&mute=1&controls=0&showinfo=0&rel=0&modestbranding=1&loop=1&playlist=bK6g7fMpJyo&iv_load_policy=3&disablekb=1&fs=0&playsinline=1&enablejsapi=1" title="USAHI Team" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      </div>
+      <button class="sound-toggle" onclick="toggleYTVideoSound('teamYT',this)" aria-label="Toggle sound">
         <i class="fas fa-volume-xmark"></i>
       </button>
       <div class="team-video-overlay">
@@ -638,9 +645,9 @@ body{font-family:'Inter',sans-serif;color:#1e293b;line-height:1.6;overflow-x:hid
 <!-- BEHIND THE SCENES — local video background -->
 <section class="bts-section">
   <div class="bts-bg">
-    <video autoplay muted loop playsinline>
-      <source src="assets/videos/bts.mp4" type="video/mp4">
-    </video>
+    <div class="yt-crop-bg">
+      <iframe id="btsYT" src="https://www.youtube.com/embed/R4PJXYcVSco?autoplay=1&mute=1&controls=0&showinfo=0&rel=0&modestbranding=1&loop=1&playlist=R4PJXYcVSco&iv_load_policy=3&disablekb=1&fs=0&playsinline=1&enablejsapi=1" title="Behind the Scenes" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    </div>
   </div>
   <div class="bts-overlay"></div>
   <div class="container bts-content reveal">
@@ -660,16 +667,13 @@ body{font-family:'Inter',sans-serif;color:#1e293b;line-height:1.6;overflow-x:hid
     </div>
     <div class="why-grid">
       <div class="why-video reveal">
-        <video id="whyVideo" muted loop playsinline preload="metadata">
-          <source src="assets/videos/why-usahi.mp4" type="video/mp4">
-        </video>
-        <div class="why-video-play" id="whyPlayOverlay" onclick="toggleWhyVideo()">
-          <div class="play-btn"><i class="fas fa-play"></i></div>
+        <div class="yt-crop-fill">
+          <iframe id="whyYT" src="https://www.youtube.com/embed/bwei20LoFcM?autoplay=1&mute=1&controls=0&showinfo=0&rel=0&modestbranding=1&loop=1&playlist=bwei20LoFcM&iv_load_policy=3&disablekb=1&fs=0&playsinline=1&enablejsapi=1" title="Why Choose USAHI" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
         </div>
-        <button class="video-pause-btn" id="whyPauseBtn" onclick="toggleWhyVideo()" style="display:none" aria-label="Pause video">
+        <button class="video-pause-btn" id="whyPauseBtn" onclick="toggleYTPause('whyYT','whyPauseBtn')" style="display:flex" aria-label="Pause video">
           <i class="fas fa-pause"></i>
         </button>
-        <button class="sound-toggle" onclick="toggleVideoSound('whyVideo',this)" aria-label="Toggle sound">
+        <button class="sound-toggle" onclick="toggleYTVideoSound('whyYT',this)" aria-label="Toggle sound">
           <i class="fas fa-volume-xmark"></i>
         </button>
       </div>
@@ -713,31 +717,25 @@ body{font-family:'Inter',sans-serif;color:#1e293b;line-height:1.6;overflow-x:hid
     </div>
     <div class="testing-grid">
       <div class="testing-card reveal">
-        <video id="testVideo1" muted loop playsinline preload="metadata">
-          <source src="assets/videos/testing1.mp4" type="video/mp4">
-        </video>
-        <div class="testing-play" id="testPlay1" onclick="toggleTestVideo('testVideo1','testPlay1','testPause1')">
-          <div class="play-btn"><i class="fas fa-play"></i></div>
+        <div class="yt-crop-fill">
+          <iframe id="test1YT" src="https://www.youtube.com/embed/r3BqGb37RSs?autoplay=1&mute=1&controls=0&showinfo=0&rel=0&modestbranding=1&loop=1&playlist=r3BqGb37RSs&iv_load_policy=3&disablekb=1&fs=0&playsinline=1&enablejsapi=1" title="Impact Test 1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
         </div>
-        <button class="video-pause-btn" id="testPause1" onclick="toggleTestVideo('testVideo1','testPlay1','testPause1')" style="display:none" aria-label="Pause video">
+        <button class="video-pause-btn" id="test1PauseBtn" onclick="toggleYTPause('test1YT','test1PauseBtn')" style="display:flex" aria-label="Pause video">
           <i class="fas fa-pause"></i>
         </button>
-        <button class="sound-toggle" onclick="toggleVideoSound('testVideo1',this)" aria-label="Toggle sound">
+        <button class="sound-toggle" onclick="toggleYTVideoSound('test1YT',this)" aria-label="Toggle sound">
           <i class="fas fa-volume-xmark"></i>
         </button>
         <div class="testing-label"><i class="fas fa-shield-halved"></i> Impact Test #1</div>
       </div>
       <div class="testing-card reveal">
-        <video id="testVideo2" muted loop playsinline preload="metadata">
-          <source src="assets/videos/testing2.mp4" type="video/mp4">
-        </video>
-        <div class="testing-play" id="testPlay2" onclick="toggleTestVideo('testVideo2','testPlay2','testPause2')">
-          <div class="play-btn"><i class="fas fa-play"></i></div>
+        <div class="yt-crop-fill">
+          <iframe id="test2YT" src="https://www.youtube.com/embed/C5j-QAGpblo?autoplay=1&mute=1&controls=0&showinfo=0&rel=0&modestbranding=1&loop=1&playlist=C5j-QAGpblo&iv_load_policy=3&disablekb=1&fs=0&playsinline=1&enablejsapi=1" title="Impact Test 2" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
         </div>
-        <button class="video-pause-btn" id="testPause2" onclick="toggleTestVideo('testVideo2','testPlay2','testPause2')" style="display:none" aria-label="Pause video">
+        <button class="video-pause-btn" id="test2PauseBtn" onclick="toggleYTPause('test2YT','test2PauseBtn')" style="display:flex" aria-label="Pause video">
           <i class="fas fa-pause"></i>
         </button>
-        <button class="sound-toggle" onclick="toggleVideoSound('testVideo2',this)" aria-label="Toggle sound">
+        <button class="sound-toggle" onclick="toggleYTVideoSound('test2YT',this)" aria-label="Toggle sound">
           <i class="fas fa-volume-xmark"></i>
         </button>
         <div class="testing-label"><i class="fas fa-shield-halved"></i> Impact Test #2</div>
@@ -864,27 +862,27 @@ body{font-family:'Inter',sans-serif;color:#1e293b;line-height:1.6;overflow-x:hid
       <p class="section-subtitle" style="margin:0 auto">Watch our team at work, real projects, and the quality that sets us apart.</p>
     </div>
     <div class="ig-grid reveal">
-      <a href="https://www.instagram.com/reel/DLp06-dtDLq/" target="_blank" rel="noopener" class="ig-card">
-        <video autoplay muted loop playsinline>
-          <source src="assets/videos/ad3.mp4" type="video/mp4">
-        </video>
+      <div class="ig-card">
+        <div class="yt-crop-fill">
+          <iframe id="ig1YT" src="https://www.youtube.com/embed/PDJ4-XPZsVk?autoplay=1&mute=1&controls=0&showinfo=0&rel=0&modestbranding=1&loop=1&playlist=PDJ4-XPZsVk&iv_load_policy=3&disablekb=1&fs=0&playsinline=1&enablejsapi=1" title="USAHI Reel 1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
         <div class="ig-play"><i class="fas fa-play"></i></div>
-        <div class="ig-overlay"><span><i class="fab fa-instagram"></i> View on Instagram</span></div>
-      </a>
-      <a href="https://www.instagram.com/reel/DJjt1cQO6bl/" target="_blank" rel="noopener" class="ig-card">
-        <video autoplay muted loop playsinline>
-          <source src="assets/videos/why-usahi.mp4" type="video/mp4">
-        </video>
+        <a href="https://www.instagram.com/reel/DLp06-dtDLq/" target="_blank" rel="noopener" class="ig-overlay"><span><i class="fab fa-instagram"></i> View on Instagram</span></a>
+      </div>
+      <div class="ig-card">
+        <div class="yt-crop-fill">
+          <iframe id="ig2YT" src="https://www.youtube.com/embed/bwei20LoFcM?autoplay=1&mute=1&controls=0&showinfo=0&rel=0&modestbranding=1&loop=1&playlist=bwei20LoFcM&iv_load_policy=3&disablekb=1&fs=0&playsinline=1&enablejsapi=1" title="USAHI Reel 2" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
         <div class="ig-play"><i class="fas fa-play"></i></div>
-        <div class="ig-overlay"><span><i class="fab fa-instagram"></i> View on Instagram</span></div>
-      </a>
-      <a href="https://www.instagram.com/reel/DGgaj1_vuei/" target="_blank" rel="noopener" class="ig-card">
-        <video autoplay muted loop playsinline>
-          <source src="assets/videos/ad1-spanish.mp4" type="video/mp4">
-        </video>
+        <a href="https://www.instagram.com/reel/DJjt1cQO6bl/" target="_blank" rel="noopener" class="ig-overlay"><span><i class="fab fa-instagram"></i> View on Instagram</span></a>
+      </div>
+      <div class="ig-card">
+        <div class="yt-crop-fill">
+          <iframe id="ig3YT" src="https://www.youtube.com/embed/iyWiSK3SzWw?autoplay=1&mute=1&controls=0&showinfo=0&rel=0&modestbranding=1&loop=1&playlist=iyWiSK3SzWw&iv_load_policy=3&disablekb=1&fs=0&playsinline=1&enablejsapi=1" title="USAHI Reel 3" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
         <div class="ig-play"><i class="fas fa-play"></i></div>
-        <div class="ig-overlay"><span><i class="fab fa-instagram"></i> View on Instagram</span></div>
-      </a>
+        <a href="https://www.instagram.com/reel/DGgaj1_vuei/" target="_blank" rel="noopener" class="ig-overlay"><span><i class="fab fa-instagram"></i> View on Instagram</span></a>
+      </div>
     </div>
   </div>
 </section>
@@ -1068,51 +1066,44 @@ body{font-family:'Inter',sans-serif;color:#1e293b;line-height:1.6;overflow-x:hid
 
 <script src="https://www.youtube.com/iframe_api"></script>
 <script>
-// YOUTUBE SOUND TOGGLE
-var ytPlayer;
+// YOUTUBE PLAYERS — all videos via IFrame API
+var ytPlayers={};
+var ytMutedState={};
+var ytPausedState={};
+var ytIDs=['heroYT','teamYT','btsYT','whyYT','test1YT','test2YT','ig1YT','ig2YT','ig3YT'];
 function onYouTubeIframeAPIReady(){
-  ytPlayer=new YT.Player('heroYT',{
-    events:{'onReady':function(e){e.target.mute();}}
+  ytIDs.forEach(function(id){
+    var el=document.getElementById(id);
+    if(!el)return;
+    ytMutedState[id]=true;
+    ytPausedState[id]=false;
+    ytPlayers[id]=new YT.Player(id,{
+      events:{'onReady':function(e){e.target.mute();}}
+    });
   });
 }
-var ytMuted=true;
 function toggleYTSound(){
-  if(!ytPlayer)return;
+  var p=ytPlayers['heroYT'];if(!p)return;
   var btn=document.getElementById('ytSoundToggle');
-  if(ytMuted){ytPlayer.unMute();ytMuted=false;btn.innerHTML='<i class="fas fa-volume-high"></i>'}
-  else{ytPlayer.mute();ytMuted=true;btn.innerHTML='<i class="fas fa-volume-xmark"></i>'}
+  if(ytMutedState['heroYT']){p.unMute();ytMutedState['heroYT']=false;btn.innerHTML='<i class="fas fa-volume-high"></i>'}
+  else{p.mute();ytMutedState['heroYT']=true;btn.innerHTML='<i class="fas fa-volume-xmark"></i>'}
 }
-var ytPaused=false;
 function toggleYTPause(){
-  if(!ytPlayer)return;
+  var p=ytPlayers['heroYT'];if(!p)return;
   var btn=document.getElementById('ytPauseBtn');
-  if(ytPaused){ytPlayer.playVideo();ytPaused=false;btn.innerHTML='<i class="fas fa-pause"></i>'}
-  else{ytPlayer.pauseVideo();ytPaused=true;btn.innerHTML='<i class="fas fa-play"></i>'}
+  if(ytPausedState['heroYT']){p.playVideo();ytPausedState['heroYT']=false;btn.innerHTML='<i class="fas fa-pause"></i>'}
+  else{p.pauseVideo();ytPausedState['heroYT']=true;btn.innerHTML='<i class="fas fa-play"></i>'}
 }
-
-// GENERIC SOUND TOGGLE FOR ALL LOCAL VIDEOS
-function toggleVideoSound(videoId,btn){
-  var v=document.getElementById(videoId);
-  v.muted=!v.muted;
-  btn.innerHTML=v.muted?'<i class="fas fa-volume-xmark"></i>':'<i class="fas fa-volume-high"></i>';
+function toggleYTVideoSound(id,btn){
+  var p=ytPlayers[id];if(!p)return;
+  if(ytMutedState[id]){p.unMute();ytMutedState[id]=false;btn.innerHTML='<i class="fas fa-volume-high"></i>'}
+  else{p.mute();ytMutedState[id]=true;btn.innerHTML='<i class="fas fa-volume-xmark"></i>'}
 }
-
-// WHY VIDEO with pause button
-function toggleWhyVideo(){
-  const v=document.getElementById('whyVideo');
-  const o=document.getElementById('whyPlayOverlay');
-  const p=document.getElementById('whyPauseBtn');
-  if(v.paused){v.play();o.style.display='none';p.style.display='flex'}
-  else{v.pause();o.style.display='flex';p.style.display='none'}
-}
-
-// TESTING VIDEOS with pause buttons
-function toggleTestVideo(videoId,playId,pauseId){
-  const v=document.getElementById(videoId);
-  const o=document.getElementById(playId);
-  const p=document.getElementById(pauseId);
-  if(v.paused){v.play();o.style.display='none';p.style.display='flex'}
-  else{v.pause();o.style.display='flex';p.style.display='none'}
+function toggleYTPause(id,btnId){
+  var p=ytPlayers[id];if(!p)return;
+  var btn=document.getElementById(btnId);
+  if(ytPausedState[id]){p.playVideo();ytPausedState[id]=false;btn.innerHTML='<i class="fas fa-pause"></i>'}
+  else{p.pauseVideo();ytPausedState[id]=true;btn.innerHTML='<i class="fas fa-play"></i>'}
 }
 
 // NAVBAR SCROLL
