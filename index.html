@@ -1,0 +1,1228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Impact Windows & Doors | USA Home Improvement | South Florida's #1 Choice</title>
+<meta name="description" content="Protect your home with hurricane-rated impact windows & doors. 15+ years serving South Florida. $0 down, 100% financing. Free estimate. Call (877) 554-6373.">
+<link rel="icon" type="image/webp" href="assets/logo.webp">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Playfair+Display:wght@700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{
+--primary:#245b8f;
+--primary-dark:#1a4570;
+--accent:#e2474e;
+--accent-light:#e96b71;
+--accent-soft:rgba(226,71,78,.08);
+--dark:#0a0a0a;
+--gray:#6b7280;
+--light:#f8fafc;
+--white:#ffffff;
+--shadow:0 4px 24px rgba(0,0,0,0.06);
+--shadow-lg:0 20px 60px rgba(0,0,0,0.1);
+--radius:12px;
+}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',sans-serif;color:#1e293b;line-height:1.6;overflow-x:hidden;background:var(--white)}
+
+.container{max-width:1280px;margin:0 auto;padding:0 24px}
+.section-label{display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--accent);margin-bottom:12px}
+.section-label::before{content:'';width:32px;height:2px;background:var(--accent)}
+.section-title{font-family:'Playfair Display',serif;font-size:clamp(28px,4vw,48px);font-weight:800;color:var(--dark);line-height:1.15;margin-bottom:16px}
+.section-subtitle{font-size:18px;color:var(--gray);max-width:640px}
+.btn{display:inline-flex;align-items:center;gap:10px;padding:16px 36px;border-radius:50px;font-size:16px;font-weight:700;cursor:pointer;transition:all .3s;border:none;text-decoration:none}
+.btn-primary{background:var(--accent);color:var(--white);box-shadow:0 4px 20px rgba(226,71,78,.3)}
+.btn-primary:hover{background:var(--accent-light);transform:translateY(-2px);box-shadow:0 8px 30px rgba(226,71,78,.4)}
+.btn-outline-dark{background:transparent;color:var(--dark);border:2px solid #d1d5db}
+.btn-outline-dark:hover{border-color:var(--primary);color:var(--primary)}
+.btn-dark{background:var(--primary);color:var(--white)}
+.btn-dark:hover{background:var(--primary-dark);transform:translateY(-2px)}
+.btn-outline-white{background:transparent;color:var(--white);border:2px solid rgba(255,255,255,.4)}
+.btn-outline-white:hover{background:rgba(255,255,255,.1);border-color:#fff}
+
+/* TOP BAR */
+.top-bar{background:var(--primary);color:var(--white);padding:8px 0;font-size:13px;text-align:center;font-weight:500}
+.top-bar a{color:#fca5a8;text-decoration:none;font-weight:700}
+.top-bar a:hover{text-decoration:underline}
+
+/* NAVBAR */
+.navbar{position:sticky;top:0;z-index:1000;background:rgba(255,255,255,.97);backdrop-filter:blur(12px);box-shadow:0 1px 3px rgba(0,0,0,.06);padding:12px 0;transition:all .3s}
+.navbar.scrolled{box-shadow:0 4px 20px rgba(0,0,0,.1)}
+.nav-inner{display:flex;align-items:center;justify-content:space-between}
+.nav-logo img{height:48px;width:auto}
+.nav-links{display:flex;gap:28px;align-items:center;list-style:none}
+.nav-links a{color:var(--dark);text-decoration:none;font-weight:600;font-size:14px;transition:color .2s}
+.nav-links a:hover{color:var(--primary)}
+.nav-cta{display:flex;align-items:center;gap:16px}
+.nav-phone{font-weight:800;font-size:18px;color:var(--primary);text-decoration:none;display:flex;align-items:center;gap:8px}
+.nav-phone i{color:var(--accent)}
+.mobile-toggle{display:none;background:none;border:none;font-size:24px;cursor:pointer;color:var(--dark)}
+
+/* HERO — clean white, compact, like reference screenshot */
+.hero{background:var(--white);padding:48px 0 40px;border-bottom:1px solid #f1f5f9}
+.hero-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
+.hero-text{max-width:560px}
+.hero h1{font-family:'Playfair Display',serif;font-size:clamp(32px,4.5vw,52px);font-weight:900;line-height:1.1;margin-bottom:16px;color:var(--dark)}
+.hero h1 span{color:var(--accent)}
+.hero-sub{font-size:17px;color:var(--gray);margin-bottom:28px;line-height:1.7}
+.hero-checklist{list-style:none;display:grid;gap:12px;margin-bottom:28px}
+.hero-checklist li{display:flex;align-items:center;gap:12px;font-size:15px;font-weight:500;color:#374151}
+.hero-checklist li .check-icon{width:32px;height:32px;border-radius:8px;background:var(--accent-soft);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.hero-checklist li .check-icon i{color:var(--accent);font-size:14px}
+.hero-btns{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:32px}
+.hero-trust{display:flex;align-items:center;gap:16px;flex-wrap:wrap}
+.hero-trust-item{display:flex;align-items:center;gap:6px;font-size:13px;font-weight:600;color:var(--gray)}
+.hero-trust-item i{color:var(--accent)}
+.hero-trust-sep{width:1px;height:20px;background:#e2e8f0}
+.hero-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin-top:32px;border-top:1px solid #e2e8f0;padding-top:28px}
+.hero-stat{text-align:center;position:relative}
+.hero-stat:not(:last-child)::after{content:'';position:absolute;right:0;top:4px;bottom:4px;width:1px;background:#e2e8f0}
+.hero-stat .stat-num{font-family:'Playfair Display',serif;font-size:clamp(28px,3vw,40px);font-weight:900;color:var(--primary);line-height:1.1}
+.hero-stat .stat-num span{color:var(--accent)}
+.hero-stat .stat-label{font-size:13px;font-weight:600;color:var(--gray);margin-top:4px}
+.hero-statewide{display:flex;align-items:center;justify-content:center;gap:10px;margin-top:24px;padding:14px 20px;background:linear-gradient(135deg,var(--accent-soft),rgba(36,91,143,.06));border-radius:10px;border:1px solid rgba(226,71,78,.1)}
+.hero-statewide i{color:var(--accent);font-size:18px}
+.hero-statewide span{font-size:14px;font-weight:600;color:var(--dark)}
+.hero-video-side{position:relative;border-radius:16px;overflow:hidden;aspect-ratio:9/10;box-shadow:var(--shadow-lg)}
+.hero-video-side video{width:100%;height:100%;object-fit:cover}
+.yt-crop{position:absolute;inset:-60px -10px;overflow:hidden;pointer-events:none}
+.yt-crop iframe{width:calc(100% + 20px);height:calc(100% + 120px);border:none;position:absolute;top:-60px;left:-10px}
+.hero-video-side .sound-toggle,.hero-video-side .video-pause-btn{pointer-events:auto;z-index:20}
+.hero-video-play{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,.15);transition:background .3s;cursor:pointer}
+.hero-video-play:hover{background:rgba(0,0,0,.3)}
+.hero-video-play .play-btn{width:64px;height:64px;border-radius:50%;background:var(--white);display:flex;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(0,0,0,.2)}
+.hero-video-play .play-btn i{color:var(--accent);font-size:24px;margin-left:4px}
+.hero-video-badge{position:absolute;bottom:16px;left:16px;right:16px;background:rgba(255,255,255,.95);backdrop-filter:blur(8px);border-radius:10px;padding:12px 16px;display:flex;align-items:center;gap:12px}
+.hero-video-badge i{color:var(--accent);font-size:20px}
+.hero-video-badge span{font-size:13px;font-weight:600;color:var(--dark)}
+.sound-toggle{position:absolute;top:12px;right:12px;z-index:10;width:36px;height:36px;border-radius:50%;background:rgba(0,0,0,.4);backdrop-filter:blur(8px);border:none;color:#fff;font-size:14px;cursor:pointer;display:flex;align-items:center;justify-content:center}
+
+/* TRUST BAR */
+.trust-bar{background:var(--light);padding:28px 0;border-bottom:1px solid #e2e8f0}
+.trust-logos{display:flex;align-items:center;justify-content:center;gap:40px;flex-wrap:wrap}
+.trust-logos img{height:36px;width:auto;opacity:.5;filter:grayscale(100%);transition:all .3s}
+.trust-logos img:hover{opacity:1;filter:none}
+.trust-text{display:flex;align-items:center;gap:8px;font-weight:700;color:var(--gray);font-size:13px}
+.trust-text i{color:var(--accent);font-size:16px}
+
+/* INLINE FORM — white bg, no gradient */
+.inline-form-section{padding:80px 0;background:var(--white);border-bottom:1px solid #f1f5f9}
+.inline-form-wrap{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+.inline-form-text h2{font-family:'Playfair Display',serif;font-size:clamp(28px,3.5vw,42px);font-weight:800;margin-bottom:16px;color:var(--dark)}
+.inline-form-text p{font-size:17px;color:var(--gray);margin-bottom:24px}
+.inline-form-features{list-style:none;display:grid;gap:12px}
+.inline-form-features li{display:flex;align-items:center;gap:12px;font-size:15px;font-weight:500;color:#374151}
+.inline-form-features li i{color:var(--accent);font-size:16px}
+.inline-form-card{background:var(--light);border-radius:16px;padding:36px;border:1px solid #e2e8f0}
+.inline-form-card h3{font-family:'Playfair Display',serif;font-size:24px;margin-bottom:4px;color:var(--dark)}
+.inline-form-card .sub{font-size:13px;color:var(--gray);margin-bottom:20px}
+.form-group{margin-bottom:14px}
+.form-group input,.form-group select,.form-group textarea{width:100%;padding:14px 16px;border:1.5px solid #e2e8f0;border-radius:10px;font-size:14px;font-family:inherit;transition:border .2s;background:var(--white)}
+.form-group input:focus,.form-group select:focus,.form-group textarea:focus{outline:none;border-color:var(--primary)}
+.form-group textarea{height:70px;resize:none}
+.form-submit{width:100%;padding:16px;background:var(--accent);color:var(--white);border:none;border-radius:10px;font-size:16px;font-weight:800;cursor:pointer;transition:all .3s}
+.form-submit:hover{background:var(--accent-light)}
+
+/* BEFORE/AFTER */
+.ba-section{padding:80px 0;background:var(--light)}
+.ba-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(380px,1fr));gap:32px;margin-top:48px}
+.ba-item{position:relative;border-radius:var(--radius);overflow:hidden;aspect-ratio:4/3;cursor:col-resize;box-shadow:var(--shadow);user-select:none}
+.ba-item img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.ba-item .ba-after{clip-path:inset(0 0 0 50%)}
+.ba-item .ba-slider{position:absolute;top:0;bottom:0;width:4px;background:var(--white);left:50%;z-index:5;cursor:col-resize;box-shadow:0 0 12px rgba(0,0,0,.3)}
+.ba-item .ba-handle{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:44px;height:44px;background:var(--white);border-radius:50%;z-index:6;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 12px rgba(0,0,0,.25);cursor:col-resize}
+.ba-item .ba-handle i{color:var(--primary);font-size:16px}
+.ba-label{position:absolute;top:16px;padding:6px 14px;background:rgba(0,0,0,.6);backdrop-filter:blur(4px);color:#fff;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:1px;border-radius:6px;z-index:4}
+.ba-label.before{left:16px}
+.ba-label.after{right:16px}
+
+/* PROJECTS */
+.projects-section{padding:80px 0;background:var(--white)}
+.project-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:24px;margin-top:48px}
+.project-card{position:relative;border-radius:var(--radius);overflow:hidden;aspect-ratio:4/3;cursor:pointer;box-shadow:var(--shadow);transition:all .3s}
+.project-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-lg)}
+.project-card img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
+.project-card:hover img{transform:scale(1.05)}
+.project-card .overlay{position:absolute;inset:0;background:linear-gradient(180deg,transparent 40%,rgba(0,0,0,.7) 100%);opacity:0;transition:opacity .3s;display:flex;align-items:flex-end;padding:24px}
+.project-card:hover .overlay{opacity:1}
+.project-card .overlay span{color:#fff;font-weight:700;font-size:15px}
+.project-card .photo-count{position:absolute;top:12px;right:12px;background:rgba(0,0,0,.6);backdrop-filter:blur(4px);color:#fff;padding:6px 12px;border-radius:20px;font-size:12px;font-weight:600;display:flex;align-items:center;gap:6px}
+
+/* LIGHTBOX */
+.lightbox{display:none;position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,.95);align-items:center;justify-content:center}
+.lightbox.active{display:flex}
+.lightbox-content{position:relative;max-width:90vw;max-height:90vh}
+.lightbox-content img{max-width:90vw;max-height:85vh;object-fit:contain;border-radius:8px}
+.lightbox-close{position:absolute;top:-40px;right:0;background:none;border:none;color:#fff;font-size:28px;cursor:pointer}
+.lightbox-nav{position:absolute;top:50%;transform:translateY(-50%);background:rgba(255,255,255,.15);border:none;color:#fff;width:48px;height:48px;border-radius:50%;font-size:20px;cursor:pointer;transition:all .2s}
+.lightbox-nav:hover{background:rgba(255,255,255,.3)}
+.lightbox-nav.prev{left:-60px}
+.lightbox-nav.next{right:-60px}
+.lightbox-counter{text-align:center;color:rgba(255,255,255,.6);margin-top:12px;font-size:14px}
+.lightbox-thumbs{display:flex;gap:8px;justify-content:center;margin-top:16px;max-width:90vw;overflow-x:auto;padding:8px 0}
+.lightbox-thumbs img{width:60px;height:45px;object-fit:cover;border-radius:4px;cursor:pointer;opacity:.5;transition:opacity .2s;border:2px solid transparent}
+.lightbox-thumbs img.active{opacity:1;border-color:var(--accent)}
+
+/* TEAM */
+.team-section{padding:80px 0;background:var(--light)}
+.team-video-wrap{position:relative;border-radius:20px;overflow:hidden;box-shadow:var(--shadow-lg);margin-top:48px;aspect-ratio:16/7}
+.team-video-wrap video{width:100%;height:100%;object-fit:cover}
+.team-video-overlay{position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(36,91,143,.9));padding:40px;color:var(--white)}
+.team-video-overlay h3{font-family:'Playfair Display',serif;font-size:28px;margin-bottom:8px}
+.team-video-overlay p{opacity:.85;font-size:15px}
+.team-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:24px;margin-top:32px}
+.team-card{text-align:center;padding:24px;border-radius:var(--radius);background:var(--white);border:1px solid #f1f5f9}
+.team-card img{width:100%;aspect-ratio:1;object-fit:cover;border-radius:12px;margin-bottom:16px}
+.team-card h4{font-weight:700;font-size:16px}
+.team-card p{font-size:13px;color:var(--gray)}
+
+/* BEHIND THE SCENES — local video background */
+.bts-section{position:relative;padding:100px 0;overflow:hidden;min-height:450px}
+.bts-bg{position:absolute;inset:0;z-index:0}
+.bts-bg video{width:100%;height:100%;object-fit:cover}
+.bts-overlay{position:absolute;inset:0;z-index:1;background:linear-gradient(135deg,rgba(36,91,143,.9),rgba(0,0,0,.8))}
+.bts-content{position:relative;z-index:2;text-align:center;color:var(--white)}
+.bts-content h2{font-family:'Playfair Display',serif;font-size:clamp(28px,4vw,48px);font-weight:800;margin-bottom:16px}
+.bts-content p{font-size:18px;opacity:.85;max-width:600px;margin:0 auto 32px}
+
+/* WHY CHOOSE US */
+.why-section{padding:80px 0;background:var(--white)}
+.why-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;margin-top:48px}
+.why-video{position:relative;border-radius:20px;overflow:hidden;aspect-ratio:16/9;box-shadow:var(--shadow-lg)}
+.why-video video{width:100%;height:100%;object-fit:cover}
+.why-video-play{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,.2);cursor:pointer;transition:background .3s}
+.why-video-play:hover{background:rgba(0,0,0,.35)}
+.why-video-play .play-btn{width:64px;height:64px;border-radius:50%;background:var(--white);display:flex;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(0,0,0,.2)}
+.why-video-play .play-btn i{color:var(--accent);font-size:24px;margin-left:4px}
+.why-features{display:grid;gap:20px}
+.why-feature{display:flex;gap:16px;padding:16px;border-radius:var(--radius);transition:all .3s;border:1px solid transparent}
+.why-feature:hover{background:var(--light);border-color:#e2e8f0}
+.why-icon{width:48px;height:48px;border-radius:12px;background:var(--accent-soft);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.why-icon i{font-size:20px;color:var(--accent)}
+.why-feature h4{font-weight:700;font-size:15px;margin-bottom:4px}
+.why-feature p{font-size:13px;color:var(--gray);line-height:1.5}
+
+/* SERVICES */
+.services-section{padding:80px 0;background:var(--light)}
+.services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:48px}
+.service-card{position:relative;border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);transition:all .3s;aspect-ratio:4/3}
+.service-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-lg)}
+.service-card img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
+.service-card:hover img{transform:scale(1.05)}
+.service-card .svc-overlay{position:absolute;inset:0;background:linear-gradient(180deg,transparent 30%,rgba(0,0,0,.75) 100%);display:flex;flex-direction:column;justify-content:flex-end;padding:24px;color:var(--white)}
+.service-card h4{font-weight:800;font-size:18px;margin-bottom:4px;color:var(--white)}
+.service-card p{font-size:13px;color:rgba(255,255,255,.8);line-height:1.5}
+.service-card-text{position:relative;border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);transition:all .3s;aspect-ratio:4/3;background:var(--primary);display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:32px}
+.service-card-text:hover{transform:translateY(-4px);box-shadow:var(--shadow-lg)}
+.service-card-text .svc-icon{width:56px;height:56px;border-radius:14px;background:rgba(255,255,255,.15);display:flex;align-items:center;justify-content:center;margin-bottom:16px}
+.service-card-text .svc-icon i{font-size:24px;color:var(--white)}
+.service-card-text h4{font-weight:800;font-size:18px;margin-bottom:8px;color:var(--white)}
+.service-card-text p{font-size:13px;color:rgba(255,255,255,.75);line-height:1.5}
+
+/* TESTING VIDEOS */
+.testing-section{padding:80px 0;background:var(--white)}
+.testing-grid{display:grid;grid-template-columns:1fr 1fr;gap:32px;margin-top:48px}
+.testing-card{position:relative;border-radius:var(--radius);overflow:hidden;aspect-ratio:9/16;max-height:600px;box-shadow:var(--shadow)}
+.testing-card video{width:100%;height:100%;object-fit:cover}
+.testing-card .testing-play{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,.2);cursor:pointer;transition:background .3s}
+.testing-card .testing-play:hover{background:rgba(0,0,0,.35)}
+.testing-card .testing-play .play-btn{width:56px;height:56px;border-radius:50%;background:var(--white);display:flex;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(0,0,0,.2)}
+.testing-card .testing-play .play-btn i{color:var(--accent);font-size:20px;margin-left:3px}
+.testing-label{position:absolute;bottom:16px;left:16px;background:rgba(0,0,0,.6);backdrop-filter:blur(4px);color:#fff;padding:8px 16px;border-radius:8px;font-size:13px;font-weight:600}
+.video-pause-btn{position:absolute;bottom:16px;right:16px;z-index:10;width:44px;height:44px;border-radius:50%;background:rgba(0,0,0,.5);backdrop-filter:blur(8px);border:none;color:#fff;font-size:16px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .2s}
+.video-pause-btn:hover{background:rgba(0,0,0,.7);transform:scale(1.1)}
+
+/* TESTIMONIALS */
+.testimonials-section{padding:80px 0;background:var(--light)}
+.testimonial-scroll{display:flex;gap:24px;overflow-x:auto;padding:20px 4px;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+.testimonial-scroll::-webkit-scrollbar{display:none}
+.testimonial-card{min-width:340px;max-width:400px;background:var(--white);border-radius:var(--radius);padding:28px;scroll-snap-align:start;border:1px solid #f1f5f9;flex-shrink:0}
+.testimonial-card .stars{color:#f59e0b;font-size:16px;margin-bottom:12px}
+.testimonial-card .quote{font-size:15px;line-height:1.7;color:#374151;margin-bottom:16px;font-style:italic}
+.testimonial-card .author-info .name{font-weight:700;font-size:14px}
+.testimonial-card .author-info .location{font-size:12px;color:var(--gray)}
+.testimonial-photos-grid{display:flex;gap:12px;overflow-x:auto;padding:32px 0 16px;scrollbar-width:none}
+.testimonial-photos-grid::-webkit-scrollbar{display:none}
+.testimonial-photos-grid img{width:200px;height:150px;object-fit:cover;border-radius:10px;flex-shrink:0;cursor:pointer;transition:transform .3s}
+.testimonial-photos-grid img:hover{transform:scale(1.03)}
+
+/* FINANCING */
+.financing-section{padding:80px 0;background:var(--white);border-top:1px solid #f1f5f9}
+.financing-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:24px;margin-top:48px}
+.fin-card{background:var(--light);border-radius:var(--radius);padding:32px;border:1px solid #f1f5f9;text-align:center}
+.fin-card i{font-size:36px;color:var(--accent);margin-bottom:16px}
+.fin-card h4{font-size:18px;font-weight:700;margin-bottom:8px}
+.fin-card p{font-size:14px;color:var(--gray)}
+.financing-logos{display:flex;justify-content:center;gap:40px;margin-top:48px;flex-wrap:wrap;align-items:center}
+.financing-logos img{height:36px;width:auto;opacity:.5;filter:grayscale(100%);transition:all .3s}
+.financing-logos img:hover{opacity:1;filter:none}
+
+/* MAP + REVIEWS */
+.map-section{padding:80px 0;background:var(--light)}
+.map-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start;margin-top:48px}
+.map-wrap{border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);height:450px}
+.map-wrap iframe{width:100%;height:100%;border:none}
+.review-summary{background:var(--white);border-radius:var(--radius);padding:40px;box-shadow:var(--shadow);text-align:center;border:1px solid #f1f5f9}
+.review-score{font-size:64px;font-weight:900;color:var(--primary);line-height:1}
+.review-stars{color:#f59e0b;font-size:24px;margin:8px 0}
+.review-count{font-size:16px;color:var(--gray);margin-bottom:24px}
+.review-badges{display:grid;gap:16px}
+.review-badge{display:flex;align-items:center;gap:16px;padding:16px;border-radius:10px;background:var(--light);text-align:left}
+.review-badge .badge-icon{width:40px;height:40px;border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.review-badge .badge-name{font-weight:700;font-size:14px}
+.review-badge .badge-detail{font-size:12px;color:var(--gray)}
+
+/* INSTAGRAM — video only, no captions */
+.ig-section{padding:80px 0;background:var(--white)}
+.ig-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:40px}
+.ig-card{position:relative;border-radius:var(--radius);overflow:hidden;aspect-ratio:9/16;max-height:500px;box-shadow:var(--shadow);cursor:pointer;transition:all .3s}
+.ig-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-lg)}
+.ig-card video{width:100%;height:100%;object-fit:cover}
+.ig-card .ig-overlay{position:absolute;inset:0;background:linear-gradient(180deg,transparent 60%,rgba(0,0,0,.6) 100%);display:flex;align-items:flex-end;padding:20px;transition:background .3s}
+.ig-card:hover .ig-overlay{background:linear-gradient(180deg,transparent 40%,rgba(0,0,0,.7) 100%)}
+.ig-card .ig-overlay span{color:#fff;font-size:14px;font-weight:600;display:flex;align-items:center;gap:8px}
+.ig-card .ig-play{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:52px;height:52px;border-radius:50%;background:rgba(255,255,255,.9);display:flex;align-items:center;justify-content:center;box-shadow:0 4px 16px rgba(0,0,0,.2)}
+.ig-card .ig-play i{color:var(--accent);font-size:20px;margin-left:3px}
+
+/* CTA */
+.cta-section{padding:80px 0;background:var(--primary);color:var(--white);text-align:center}
+.cta-section h2{font-family:'Playfair Display',serif;font-size:clamp(28px,4vw,44px);font-weight:800;margin-bottom:16px}
+.cta-section p{font-size:18px;opacity:.7;margin-bottom:32px}
+.cta-phone{font-size:clamp(32px,5vw,56px);font-weight:900;color:var(--white);text-decoration:none;display:block;margin-bottom:24px;transition:opacity .3s}
+.cta-phone:hover{opacity:.8}
+
+/* FOOTER */
+.footer{background:#0a0a0a;color:rgba(255,255,255,.6);padding:60px 0 24px}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px;margin-bottom:40px}
+.footer-brand img{height:40px;margin-bottom:16px}
+.footer-brand p{font-size:14px;line-height:1.7}
+.footer h5{color:var(--white);font-weight:700;font-size:14px;margin-bottom:16px;text-transform:uppercase;letter-spacing:1px}
+.footer ul{list-style:none}
+.footer ul li{margin-bottom:8px}
+.footer ul a{color:rgba(255,255,255,.6);text-decoration:none;font-size:14px;transition:color .2s}
+.footer ul a:hover{color:var(--accent)}
+.footer-social{display:flex;gap:12px;margin-top:16px}
+.footer-social a{width:40px;height:40px;border-radius:10px;background:rgba(255,255,255,.08);display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,.6);text-decoration:none;transition:all .2s}
+.footer-social a:hover{background:var(--accent);color:var(--white)}
+.footer-bottom{border-top:1px solid rgba(255,255,255,.08);padding-top:24px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;font-size:13px}
+.footer-licenses{display:flex;gap:24px;flex-wrap:wrap}
+.footer-licenses span{display:flex;align-items:center;gap:6px}
+.footer-licenses i{color:var(--accent)}
+
+/* FLOATING FORM */
+.floating-form{position:fixed;right:-420px;top:50%;transform:translateY(-50%);z-index:999;width:380px;background:var(--white);border-radius:16px 0 0 16px;box-shadow:-8px 0 40px rgba(0,0,0,.15);transition:right .4s;padding:32px}
+.floating-form.open{right:0}
+.form-tab{position:absolute;left:-48px;top:50%;transform:translateY(-50%);background:var(--accent);color:var(--white);padding:16px 12px;border-radius:12px 0 0 12px;cursor:pointer;writing-mode:vertical-rl;font-weight:800;font-size:13px;letter-spacing:1px}
+.floating-form h3{font-family:'Playfair Display',serif;font-size:22px;font-weight:800;margin-bottom:4px}
+.floating-form .form-sub{font-size:13px;color:var(--gray);margin-bottom:20px}
+.form-close{position:absolute;top:12px;right:16px;background:none;border:none;font-size:20px;cursor:pointer;color:var(--gray)}
+
+/* ANIMATIONS */
+.reveal{opacity:0;transform:translateY(30px);transition:all .6s cubic-bezier(.4,0,.2,1)}
+.reveal.visible{opacity:1;transform:none}
+
+@media(max-width:1024px){
+  .hero-grid,.why-grid,.inline-form-wrap,.map-grid,.testing-grid{grid-template-columns:1fr}
+  .footer-grid{grid-template-columns:1fr 1fr}
+  .ig-grid{grid-template-columns:repeat(3,1fr)}
+  .services-grid{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:768px){
+  .nav-links{display:none}
+  .mobile-toggle{display:block}
+  .ba-grid{grid-template-columns:1fr}
+  .project-grid{grid-template-columns:1fr 1fr}
+  .footer-grid{grid-template-columns:1fr}
+  .floating-form{width:100%;right:-100%;border-radius:16px 0 0 16px}
+  .lightbox-nav.prev{left:8px}
+  .lightbox-nav.next{right:8px}
+  .ig-grid{grid-template-columns:1fr 1fr 1fr}
+  .hero-video-side{aspect-ratio:16/9}
+  .services-grid{grid-template-columns:1fr 1fr}
+}
+@media(max-width:480px){
+  .project-grid{grid-template-columns:1fr}
+  .ig-grid{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<!-- TOP BAR -->
+<div class="top-bar">
+  <div class="container">
+    <i class="fas fa-shield-halved"></i> Hurricane Season Is Here -Protect Your Home Now! <a href="tel:8775546373">Call (877) 554-6373</a> for a FREE Estimate
+  </div>
+</div>
+
+<!-- NAVBAR -->
+<nav class="navbar" id="navbar">
+  <div class="container nav-inner">
+    <a href="#" class="nav-logo"><img src="assets/logo.webp" alt="USA Home Improvement"></a>
+    <ul class="nav-links">
+      <li><a href="#before-after">Before & After</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#why-us">Why Us</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#reviews">Reviews</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <div class="nav-cta">
+      <a href="tel:8775546373" class="nav-phone"><i class="fas fa-phone-volume"></i> (877) 554-6373</a>
+      <a href="#get-quote" class="btn btn-primary" style="padding:12px 24px;font-size:14px">Free Estimate</a>
+    </div>
+    <button class="mobile-toggle" onclick="document.querySelector('.nav-links').classList.toggle('show')" aria-label="Menu"><i class="fas fa-bars"></i></button>
+  </div>
+</nav>
+
+<!-- HERO — compact white layout with video on right -->
+<section class="hero" id="hero">
+  <div class="container">
+    <div class="hero-grid">
+      <div class="hero-text">
+        <h1>Protect Your Home with <span>Impact Windows</span> & Doors</h1>
+        <p class="hero-sub">Hurricane-rated protection that saves you money on energy & insurance. Licensed, insured, and backed by 15+ years of expertise across South Florida.</p>
+        <ul class="hero-checklist">
+          <li><span class="check-icon"><i class="fas fa-shield-halved"></i></span> Category 5 hurricane-rated impact protection</li>
+          <li><span class="check-icon"><i class="fas fa-dollar-sign"></i></span> $0 down, as low as $5/month per window</li>
+          <li><span class="check-icon"><i class="fas fa-certificate"></i></span> Licensed CGC1526707 &bull; BBB A+ Rated</li>
+          <li><span class="check-icon"><i class="fas fa-bolt"></i></span> Lower energy bills &amp; insurance premiums</li>
+        </ul>
+        <div class="hero-btns">
+          <a href="#get-quote" class="btn btn-primary"><i class="fas fa-calendar-check"></i> Book Free Consult</a>
+          <a href="tel:8775546373" class="btn btn-outline-dark"><i class="fas fa-phone"></i> Call (877) 554-6373</a>
+        </div>
+        <div class="hero-stats">
+          <div class="hero-stat">
+            <div class="stat-num">25<span>+</span></div>
+            <div class="stat-label">Years Experience</div>
+          </div>
+          <div class="hero-stat">
+            <div class="stat-num">2M<span>+</span></div>
+            <div class="stat-label">Windows Installed</div>
+          </div>
+          <div class="hero-stat">
+            <div class="stat-num">25K<span>+</span></div>
+            <div class="stat-label">Happy Customers</div>
+          </div>
+        </div>
+        <div class="hero-statewide">
+          <i class="fas fa-map-location-dot"></i>
+          <span>Proudly Serving All of Florida -From Miami to Jacksonville</span>
+        </div>
+      </div>
+      <div class="hero-video-side">
+        <div class="yt-crop">
+          <iframe id="heroYT" src="https://www.youtube.com/embed/lyaCmo64yeQ?autoplay=1&mute=1&controls=0&showinfo=0&rel=0&modestbranding=1&loop=1&playlist=lyaCmo64yeQ&iv_load_policy=3&disablekb=1&fs=0&playsinline=1&enablejsapi=1" title="USA Home Improvement" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" frameborder="0" allowfullscreen></iframe>
+        </div>
+        <button class="sound-toggle" id="ytSoundToggle" onclick="toggleYTSound()" aria-label="Toggle sound">
+          <i class="fas fa-volume-xmark"></i>
+        </button>
+        <button class="video-pause-btn" id="ytPauseBtn" onclick="toggleYTPause()" style="display:flex" aria-label="Pause video">
+          <i class="fas fa-pause"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST BAR -->
+<div class="trust-bar">
+  <div class="container">
+    <div class="trust-logos">
+      <div class="trust-text"><i class="fas fa-shield-check"></i> Licensed CGC1526707</div>
+      <img src="assets/logos/ESWindows-logo-1024x257.png" alt="ES Windows">
+      <img src="assets/logos/tecnoglass-logo.png" alt="Tecnoglass">
+      <div class="trust-text"><i class="fas fa-star"></i> BBB A+ Rated</div>
+      <img src="assets/logos/YgreneFinancing_Logo_GrnGry.png" alt="Ygrene Financing">
+      <img src="assets/logos/Service Finance.webp" alt="Service Finance">
+      <img src="assets/logos/Goodleap Finance.jpg" alt="GoodLeap" style="height:30px">
+    </div>
+  </div>
+</div>
+
+<!-- QUOTE FORM -->
+<section class="inline-form-section" id="get-quote">
+  <div class="container">
+    <div class="inline-form-wrap">
+      <div class="inline-form-text reveal">
+        <span class="section-label">Free Estimate</span>
+        <h2>Get Your Free Impact Window Quote Today</h2>
+        <p>Starting at just $5/month per window installed. $0 down with 100% financing available through our accredited lending partners.</p>
+        <ul class="inline-form-features">
+          <li><i class="fas fa-check-circle"></i> Hurricane-rated impact protection</li>
+          <li><i class="fas fa-check-circle"></i> Energy-efficient -lower your electric bill</li>
+          <li><i class="fas fa-check-circle"></i> Insurance premium reduction</li>
+          <li><i class="fas fa-check-circle"></i> UV protection for your furnishings</li>
+          <li><i class="fas fa-check-circle"></i> Sound reduction up to 50%</li>
+          <li><i class="fas fa-check-circle"></i> Direct manufacturer pricing</li>
+        </ul>
+      </div>
+      <div class="inline-form-card reveal">
+        <h3>Request Your Free Quote</h3>
+        <p class="sub">No obligation. A specialist will contact you shortly.</p>
+        <form id="quoteForm" onsubmit="handleFormSubmit(event)">
+          <div class="form-group"><input type="text" placeholder="Full Name *" required></div>
+          <div class="form-group"><input type="tel" placeholder="Phone Number *" required></div>
+          <div class="form-group"><input type="email" placeholder="Email Address *" required></div>
+          <div class="form-group"><input type="text" placeholder="Zip Code *" required></div>
+          <div class="form-group">
+            <select required>
+              <option value="" disabled selected>What are you interested in?</option>
+              <option>Impact Windows</option>
+              <option>Impact Doors</option>
+              <option>Windows & Doors</option>
+              <option>Roofing</option>
+              <option>HVAC / AC</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <div class="form-group"><textarea placeholder="Tell us about your project (optional)"></textarea></div>
+          <button type="submit" class="form-submit"><i class="fas fa-paper-plane"></i> Get My Free Quote</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BEFORE / AFTER -->
+<section class="ba-section" id="before-after">
+  <div class="container">
+    <div class="reveal" style="text-align:center">
+      <span class="section-label">Transformations</span>
+      <h2 class="section-title">See the Difference Impact Windows Make</h2>
+      <p class="section-subtitle" style="margin:0 auto">Drag the slider to see our before & after transformations on real South Florida homes.</p>
+    </div>
+    <div class="ba-grid">
+      <div class="ba-item reveal" data-ba>
+        <img src="assets/before-after/before1.png" alt="Before" class="ba-before">
+        <img src="assets/before-after/after1.png" alt="After" class="ba-after">
+        <div class="ba-slider"></div>
+        <div class="ba-handle"><i class="fas fa-arrows-left-right"></i></div>
+        <span class="ba-label before">Before</span>
+        <span class="ba-label after">After</span>
+      </div>
+      <div class="ba-item reveal" data-ba>
+        <img src="assets/before-after/before2.png" alt="Before" class="ba-before">
+        <img src="assets/before-after/after2.png" alt="After" class="ba-after">
+        <div class="ba-slider"></div>
+        <div class="ba-handle"><i class="fas fa-arrows-left-right"></i></div>
+        <span class="ba-label before">Before</span>
+        <span class="ba-label after">After</span>
+      </div>
+      <div class="ba-item reveal" data-ba>
+        <img src="assets/before-after/before3.png" alt="Before" class="ba-before">
+        <img src="assets/before-after/after3.png" alt="After" class="ba-after">
+        <div class="ba-slider"></div>
+        <div class="ba-handle"><i class="fas fa-arrows-left-right"></i></div>
+        <span class="ba-label before">Before</span>
+        <span class="ba-label after">After</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section class="projects-section" id="projects">
+  <div class="container">
+    <div class="reveal" style="text-align:center">
+      <span class="section-label">Our Work</span>
+      <h2 class="section-title">Completed Projects Across South Florida</h2>
+      <p class="section-subtitle" style="margin:0 auto">Click any project to view the full gallery with all photos.</p>
+    </div>
+    <div class="project-grid">
+      <div class="project-card reveal" onclick="openLightbox('project1',0)">
+        <img src="assets/homes/1A.jpg" alt="Residential project">
+        <span class="photo-count"><i class="fas fa-images"></i> 8 Photos</span>
+        <div class="overlay"><span><i class="fas fa-expand"></i> View Full Project</span></div>
+      </div>
+      <div class="project-card reveal" onclick="openLightbox('project2',0)">
+        <img src="assets/homes/5A.jpg" alt="Modern home">
+        <span class="photo-count"><i class="fas fa-images"></i> 6 Photos</span>
+        <div class="overlay"><span><i class="fas fa-expand"></i> View Full Project</span></div>
+      </div>
+      <div class="project-card reveal" onclick="openLightbox('project3',0)">
+        <img src="assets/homes/9A.jpg" alt="Luxury home">
+        <span class="photo-count"><i class="fas fa-images"></i> 7 Photos</span>
+        <div class="overlay"><span><i class="fas fa-expand"></i> View Full Project</span></div>
+      </div>
+      <div class="project-card reveal" onclick="openLightbox('project4',0)">
+        <img src="assets/homes/13A.jpg" alt="Waterfront property">
+        <span class="photo-count"><i class="fas fa-images"></i> 5 Photos</span>
+        <div class="overlay"><span><i class="fas fa-expand"></i> View Full Project</span></div>
+      </div>
+      <div class="project-card reveal" onclick="openLightbox('project5',0)">
+        <img src="assets/homes/17A.jpg" alt="Estate project">
+        <span class="photo-count"><i class="fas fa-images"></i> 6 Photos</span>
+        <div class="overlay"><span><i class="fas fa-expand"></i> View Full Project</span></div>
+      </div>
+      <div class="project-card reveal" onclick="openLightbox('project6',0)">
+        <img src="assets/homes/DJI_0048.jpg" alt="Aerial view">
+        <span class="photo-count"><i class="fas fa-images"></i> 5 Photos</span>
+        <div class="overlay"><span><i class="fas fa-expand"></i> View Full Project</span></div>
+      </div>
+      <div class="project-card reveal" onclick="openLightbox('project7',0)">
+        <img src="assets/homes/22A.jpg" alt="Completed home">
+        <span class="photo-count"><i class="fas fa-images"></i> 4 Photos</span>
+        <div class="overlay"><span><i class="fas fa-expand"></i> View Full Project</span></div>
+      </div>
+      <div class="project-card reveal" onclick="openLightbox('project8',0)">
+        <img src="assets/homes/web-2.jpg" alt="Portfolio home">
+        <span class="photo-count"><i class="fas fa-images"></i> 5 Photos</span>
+        <div class="overlay"><span><i class="fas fa-expand"></i> View Full Project</span></div>
+      </div>
+      <div class="project-card reveal" onclick="openLightbox('project9',0)">
+        <img src="assets/homes/SALA V2.png" alt="Interior view">
+        <span class="photo-count"><i class="fas fa-images"></i> 3 Photos</span>
+        <div class="overlay"><span><i class="fas fa-expand"></i> View Full Project</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox">
+  <div class="lightbox-content">
+    <button class="lightbox-close" onclick="closeLightbox()" aria-label="Close">&times;</button>
+    <button class="lightbox-nav prev" onclick="navigateLightbox(-1)" aria-label="Previous"><i class="fas fa-chevron-left"></i></button>
+    <img id="lightboxImg" src="" alt="Project photo">
+    <button class="lightbox-nav next" onclick="navigateLightbox(1)" aria-label="Next"><i class="fas fa-chevron-right"></i></button>
+    <div class="lightbox-counter" id="lightboxCounter"></div>
+    <div class="lightbox-thumbs" id="lightboxThumbs"></div>
+  </div>
+</div>
+
+<!-- TEAM -->
+<section class="team-section" id="team">
+  <div class="container">
+    <div class="reveal" style="text-align:center">
+      <span class="section-label">Our Team</span>
+      <h2 class="section-title">Meet the People Behind Every Project</h2>
+      <p class="section-subtitle" style="margin:0 auto">Our skilled team of project managers, installers, and support staff are dedicated to delivering the highest quality work on every job.</p>
+    </div>
+    <div class="team-video-wrap reveal">
+      <video id="teamVideo" autoplay muted loop playsinline>
+        <source src="assets/videos/team.mov" type="video/quicktime">
+        <source src="assets/videos/team.mov" type="video/mp4">
+      </video>
+      <button class="sound-toggle" onclick="toggleVideoSound('teamVideo',this)" aria-label="Toggle sound">
+        <i class="fas fa-volume-xmark"></i>
+      </button>
+      <div class="team-video-overlay">
+        <h3>The USAHI Family</h3>
+        <p>Licensed contractors, certified installers, and dedicated project managers working together to protect your home.</p>
+      </div>
+    </div>
+    <div class="team-grid" style="margin-top:32px">
+      <div class="team-card reveal">
+        <img src="assets/team/project-managers.png" alt="Project Managers">
+        <h4>Our Project Managers</h4>
+        <p>Dedicated point of contact from start to finish</p>
+      </div>
+      <div class="team-card reveal">
+        <img src="assets/team/installers.png" alt="Installation Team">
+        <h4>Expert Installers</h4>
+        <p>Factory-trained & ES Windows certified</p>
+      </div>
+      <div class="team-card reveal">
+        <img src="assets/team/projects-map.png" alt="Projects Map">
+        <h4>Projects Across Florida</h4>
+        <p>Serving Miami-Dade, Broward & Palm Beach</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BEHIND THE SCENES — local video background -->
+<section class="bts-section">
+  <div class="bts-bg">
+    <video autoplay muted loop playsinline>
+      <source src="assets/videos/bts.mp4" type="video/mp4">
+    </video>
+  </div>
+  <div class="bts-overlay"></div>
+  <div class="container bts-content reveal">
+    <span class="section-label" style="color:var(--accent-light)">Behind the Scenes</span>
+    <h2>See How We Build Quality Into Every Installation</h2>
+    <p>From precision measurements to the final seal -every step follows our rigorous quality standards to ensure your windows last a lifetime.</p>
+    <a href="https://www.youtube.com/watch?v=Tq9obkZQ5PA" target="_blank" rel="noopener" class="btn btn-primary"><i class="fas fa-play"></i> Watch Full Video</a>
+  </div>
+</section>
+
+<!-- WHY CHOOSE US -->
+<section class="why-section" id="why-us">
+  <div class="container">
+    <div class="reveal" style="text-align:center">
+      <span class="section-label">Why USAHI</span>
+      <h2 class="section-title">Why Homeowners Choose Us</h2>
+    </div>
+    <div class="why-grid">
+      <div class="why-video reveal">
+        <video id="whyVideo" muted loop playsinline preload="metadata">
+          <source src="assets/videos/why-usahi.mp4" type="video/mp4">
+        </video>
+        <div class="why-video-play" id="whyPlayOverlay" onclick="toggleWhyVideo()">
+          <div class="play-btn"><i class="fas fa-play"></i></div>
+        </div>
+        <button class="video-pause-btn" id="whyPauseBtn" onclick="toggleWhyVideo()" style="display:none" aria-label="Pause video">
+          <i class="fas fa-pause"></i>
+        </button>
+        <button class="sound-toggle" onclick="toggleVideoSound('whyVideo',this)" aria-label="Toggle sound">
+          <i class="fas fa-volume-xmark"></i>
+        </button>
+      </div>
+      <div class="why-features reveal">
+        <div class="why-feature">
+          <div class="why-icon"><i class="fas fa-shield-halved"></i></div>
+          <div><h4>Hurricane-Rated Protection</h4><p>All our impact windows meet Florida Building Code and large missile impact standards for Category 5 storms.</p></div>
+        </div>
+        <div class="why-feature">
+          <div class="why-icon"><i class="fas fa-hand-holding-dollar"></i></div>
+          <div><h4>$0 Down, 100% Financing</h4><p>Multiple financing options including PACE programs. As low as $5/month per window installed.</p></div>
+        </div>
+        <div class="why-feature">
+          <div class="why-icon"><i class="fas fa-certificate"></i></div>
+          <div><h4>Licensed & Insured</h4><p>General Contractor CGC1526707. BBB A+ rated with 500+ verified Google reviews.</p></div>
+        </div>
+        <div class="why-feature">
+          <div class="why-icon"><i class="fas fa-industry"></i></div>
+          <div><h4>Direct Manufacturer Pricing</h4><p>As an authorized ES Windows & Tecnoglass dealer, we cut out the middleman to save you money.</p></div>
+        </div>
+        <div class="why-feature">
+          <div class="why-icon"><i class="fas fa-bolt"></i></div>
+          <div><h4>Energy Savings</h4><p>Low-E glass reduces energy costs and blocks up to 99% of UV rays, protecting your home's interior.</p></div>
+        </div>
+        <div class="why-feature">
+          <div class="why-icon"><i class="fas fa-headset"></i></div>
+          <div><h4>Dedicated Project Manager</h4><p>One point of contact from consultation through installation and final inspection.</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTING STRENGTH VIDEOS -->
+<section class="testing-section">
+  <div class="container">
+    <div class="reveal" style="text-align:center">
+      <span class="section-label">Impact Testing</span>
+      <h2 class="section-title">Built to Withstand the Worst</h2>
+      <p class="section-subtitle" style="margin:0 auto">Watch our impact windows get tested under extreme conditions. This is the protection your family deserves.</p>
+    </div>
+    <div class="testing-grid">
+      <div class="testing-card reveal">
+        <video id="testVideo1" muted loop playsinline preload="metadata">
+          <source src="assets/videos/testing1.mp4" type="video/mp4">
+        </video>
+        <div class="testing-play" id="testPlay1" onclick="toggleTestVideo('testVideo1','testPlay1','testPause1')">
+          <div class="play-btn"><i class="fas fa-play"></i></div>
+        </div>
+        <button class="video-pause-btn" id="testPause1" onclick="toggleTestVideo('testVideo1','testPlay1','testPause1')" style="display:none" aria-label="Pause video">
+          <i class="fas fa-pause"></i>
+        </button>
+        <button class="sound-toggle" onclick="toggleVideoSound('testVideo1',this)" aria-label="Toggle sound">
+          <i class="fas fa-volume-xmark"></i>
+        </button>
+        <div class="testing-label"><i class="fas fa-shield-halved"></i> Impact Test #1</div>
+      </div>
+      <div class="testing-card reveal">
+        <video id="testVideo2" muted loop playsinline preload="metadata">
+          <source src="assets/videos/testing2.mp4" type="video/mp4">
+        </video>
+        <div class="testing-play" id="testPlay2" onclick="toggleTestVideo('testVideo2','testPlay2','testPause2')">
+          <div class="play-btn"><i class="fas fa-play"></i></div>
+        </div>
+        <button class="video-pause-btn" id="testPause2" onclick="toggleTestVideo('testVideo2','testPlay2','testPause2')" style="display:none" aria-label="Pause video">
+          <i class="fas fa-pause"></i>
+        </button>
+        <button class="sound-toggle" onclick="toggleVideoSound('testVideo2',this)" aria-label="Toggle sound">
+          <i class="fas fa-volume-xmark"></i>
+        </button>
+        <div class="testing-label"><i class="fas fa-shield-halved"></i> Impact Test #2</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="services-section" id="services">
+  <div class="container">
+    <div class="reveal" style="text-align:center">
+      <span class="section-label">Our Services</span>
+      <h2 class="section-title">Complete Home Improvement Solutions</h2>
+    </div>
+    <div class="reveal" style="margin-top:40px;margin-bottom:32px;border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow)">
+      <img src="assets/services/all-services.png" alt="All USAHI Services" style="width:100%;display:block;border-radius:var(--radius)">
+    </div>
+    <div class="services-grid">
+      <div class="service-card reveal">
+        <img src="assets/homes/web-2.jpg" alt="Impact Windows">
+        <div class="svc-overlay">
+          <h4>Impact Windows</h4>
+          <p>Hurricane-rated windows from ES Windows & Tecnoglass. Energy-efficient, noise-reducing & UV-blocking.</p>
+        </div>
+      </div>
+      <div class="service-card-text reveal">
+        <div class="svc-icon"><i class="fas fa-door-open"></i></div>
+        <h4>Impact Doors</h4>
+        <p>Sliding glass, French, entry & accordion impact doors. Complete your home's hurricane protection.</p>
+      </div>
+      <div class="service-card reveal">
+        <img src="assets/services/roofing.png" alt="Roofing">
+        <div class="svc-overlay">
+          <h4>Roofing</h4>
+          <p>Full roof replacement & repair. Shingle, tile & flat roof systems with warranty coverage.</p>
+        </div>
+      </div>
+      <div class="service-card reveal">
+        <img src="assets/services/ac-service.jpg" alt="HVAC / AC">
+        <div class="svc-overlay">
+          <h4>HVAC / AC</h4>
+          <p>Rheem-authorized dealer. Installation, repair & maintenance for complete climate comfort.</p>
+        </div>
+      </div>
+      <div class="service-card-text reveal" style="background:var(--accent)">
+        <div class="svc-icon"><i class="fas fa-paint-roller"></i></div>
+        <h4>Painting</h4>
+        <p>Interior & exterior painting. Sherwin-Williams certified for lasting, beautiful results.</p>
+      </div>
+      <div class="service-card reveal">
+        <img src="assets/services/attic-insulation.png" alt="Attic Insulation">
+        <div class="svc-overlay">
+          <h4>Attic Insulation</h4>
+          <p>Reduce energy costs & improve comfort with professional attic insulation services.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="testimonials-section">
+  <div class="container">
+    <div class="reveal" style="text-align:center">
+      <span class="section-label">Testimonials</span>
+      <h2 class="section-title">What Our Customers Say</h2>
+      <p class="section-subtitle" style="margin:0 auto">500+ five-star reviews from homeowners across South Florida.</p>
+    </div>
+    <div class="testimonial-scroll" style="margin-top:40px">
+      <div class="testimonial-card">
+        <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+        <p class="quote">"USAHI replaced all 18 windows in our home. The crew was professional, clean, and finished ahead of schedule. Our energy bill dropped 30% the very next month!"</p>
+        <div class="author-info"><div class="name">Maria R.</div><div class="location">Miami-Dade County</div></div>
+      </div>
+      <div class="testimonial-card">
+        <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+        <p class="quote">"From the first consultation to the final walk-through, USAHI was outstanding. The impact windows look amazing and we feel so much safer during hurricane season."</p>
+        <div class="author-info"><div class="name">James & Linda P.</div><div class="location">Broward County</div></div>
+      </div>
+      <div class="testimonial-card">
+        <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+        <p class="quote">"Best investment we ever made. The noise reduction alone is worth it -we live near a busy road and the difference is night and day. Highly recommend!"</p>
+        <div class="author-info"><div class="name">Carlos M.</div><div class="location">Palm Beach County</div></div>
+      </div>
+      <div class="testimonial-card">
+        <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+        <p class="quote">"The $0 down financing made it possible for us. We got top-of-the-line ES Windows installed and pay less than our old cable bill. Incredible value."</p>
+        <div class="author-info"><div class="name">Stephanie W.</div><div class="location">Hallandale Beach</div></div>
+      </div>
+      <div class="testimonial-card">
+        <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+        <p class="quote">"Our insurance company gave us a significant discount after we had USAHI install impact windows throughout our home. The project manager kept us informed every step of the way."</p>
+        <div class="author-info"><div class="name">Robert & Anne G.</div><div class="location">Fort Lauderdale</div></div>
+      </div>
+    </div>
+    <div class="testimonial-photos-grid">
+      <img src="assets/testimonials/PHOTO-2025-07-08-14-18-17.jpg" alt="Happy customer" onclick="openLightbox('testimonials',0)">
+      <img src="assets/testimonials/PHOTO-2025-06-30-10-57-34.jpg" alt="Happy customer" onclick="openLightbox('testimonials',1)">
+      <img src="assets/testimonials/PHOTO-2025-06-20-16-26-05.jpg" alt="Happy customer" onclick="openLightbox('testimonials',2)">
+      <img src="assets/testimonials/PHOTO-2025-06-06-12-16-49.jpg" alt="Happy customer" onclick="openLightbox('testimonials',3)">
+      <img src="assets/testimonials/PHOTO-2025-05-27-09-55-36.jpg" alt="Happy customer" onclick="openLightbox('testimonials',4)">
+      <img src="assets/testimonials/PHOTO-2025-05-14-17-40-19.jpg" alt="Happy customer" onclick="openLightbox('testimonials',5)">
+      <img src="assets/testimonials/PHOTO-2025-05-09-16-18-17.jpg" alt="Happy customer" onclick="openLightbox('testimonials',6)">
+      <img src="assets/testimonials/PHOTO-2025-05-09-14-27-19.jpg" alt="Happy customer" onclick="openLightbox('testimonials',7)">
+      <img src="assets/testimonials/PHOTO-2025-05-09-11-32-18.jpg" alt="Happy customer" onclick="openLightbox('testimonials',8)">
+      <img src="assets/testimonials/PHOTO-2025-05-07-16-31-36.jpg" alt="Happy customer" onclick="openLightbox('testimonials',9)">
+      <img src="assets/testimonials/PHOTO-2025-04-03-16-30-59.jpg" alt="Happy customer" onclick="openLightbox('testimonials',10)">
+      <img src="assets/testimonials/PHOTO-2025-04-03-15-27-01.jpg" alt="Happy customer" onclick="openLightbox('testimonials',11)">
+      <img src="assets/testimonials/PHOTO-2025-03-27-18-14-20.jpg" alt="Happy customer" onclick="openLightbox('testimonials',12)">
+      <img src="assets/testimonials/PHOTO-2025-03-21-11-36-56.jpg" alt="Happy customer" onclick="openLightbox('testimonials',13)">
+      <img src="assets/testimonials/PHOTO-2025-03-12-15-21-25.jpg" alt="Happy customer" onclick="openLightbox('testimonials',14)">
+      <img src="assets/testimonials/PHOTO-2025-02-25-12-10-55.jpg" alt="Happy customer" onclick="openLightbox('testimonials',15)">
+    </div>
+  </div>
+</section>
+
+<!-- INSTAGRAM — video-only cards, no embed, no captions -->
+<section class="ig-section" id="instagram">
+  <div class="container">
+    <div class="reveal" style="text-align:center">
+      <span class="section-label">See Us in Action</span>
+      <h2 class="section-title">Behind the Scenes with USAHI</h2>
+      <p class="section-subtitle" style="margin:0 auto">Watch our team at work, real projects, and the quality that sets us apart.</p>
+    </div>
+    <div class="ig-grid reveal">
+      <a href="https://www.instagram.com/reel/DLp06-dtDLq/" target="_blank" rel="noopener" class="ig-card">
+        <video autoplay muted loop playsinline>
+          <source src="assets/videos/ad3.mp4" type="video/mp4">
+        </video>
+        <div class="ig-play"><i class="fas fa-play"></i></div>
+        <div class="ig-overlay"><span><i class="fab fa-instagram"></i> View on Instagram</span></div>
+      </a>
+      <a href="https://www.instagram.com/reel/DJjt1cQO6bl/" target="_blank" rel="noopener" class="ig-card">
+        <video autoplay muted loop playsinline>
+          <source src="assets/videos/why-usahi.mp4" type="video/mp4">
+        </video>
+        <div class="ig-play"><i class="fas fa-play"></i></div>
+        <div class="ig-overlay"><span><i class="fab fa-instagram"></i> View on Instagram</span></div>
+      </a>
+      <a href="https://www.instagram.com/reel/DGgaj1_vuei/" target="_blank" rel="noopener" class="ig-card">
+        <video autoplay muted loop playsinline>
+          <source src="assets/videos/ad1-spanish.mp4" type="video/mp4">
+        </video>
+        <div class="ig-play"><i class="fas fa-play"></i></div>
+        <div class="ig-overlay"><span><i class="fab fa-instagram"></i> View on Instagram</span></div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- FINANCING -->
+<section class="financing-section">
+  <div class="container">
+    <div class="reveal" style="text-align:center">
+      <span class="section-label">Financing</span>
+      <h2 class="section-title">Flexible Financing Options</h2>
+      <p class="section-subtitle" style="margin:0 auto">Protect your home now, pay over time. Multiple options to fit every budget.</p>
+    </div>
+    <div class="financing-cards reveal">
+      <div class="fin-card">
+        <i class="fas fa-dollar-sign"></i>
+        <h4>$0 Down</h4>
+        <p>Get started with zero upfront costs. Begin protecting your home today.</p>
+      </div>
+      <div class="fin-card">
+        <i class="fas fa-percent"></i>
+        <h4>100% Financing</h4>
+        <p>Finance the entire project through our accredited lending partners.</p>
+      </div>
+      <div class="fin-card">
+        <i class="fas fa-leaf"></i>
+        <h4>PACE Program</h4>
+        <p>Property Assessed Clean Energy financing -pay through your property tax bill.</p>
+      </div>
+      <div class="fin-card">
+        <i class="fas fa-calendar-check"></i>
+        <h4>Low Monthly</h4>
+        <p>Starting at just $5/month per window installed. Affordable protection for every home.</p>
+      </div>
+    </div>
+    <div class="financing-logos reveal">
+      <img src="assets/logos/YgreneFinancing_Logo_GrnGry.png" alt="Ygrene">
+      <img src="assets/logos/Service Finance.webp" alt="Service Finance">
+      <img src="assets/logos/Goodleap Finance.jpg" alt="GoodLeap">
+    </div>
+  </div>
+</section>
+
+<!-- MAP + REVIEWS -->
+<section class="map-section" id="reviews">
+  <div class="container">
+    <div class="reveal" style="text-align:center">
+      <span class="section-label">Find Us</span>
+      <h2 class="section-title">Visit Our Showroom</h2>
+    </div>
+    <div class="map-grid reveal">
+      <div class="map-wrap">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3586.2839159355053!2d-80.16777002476117!3d25.991515377208295!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88d9aa142d68b835%3A0x8dcca7852146e043!2sUSA%20Home%20Improvement%20-%20Impact%20Windows%20and%20Doors%20(USAHI)!5e0!3m2!1sen!2s!4v1782906130994!5m2!1sen!2s" allowfullscreen loading="lazy" referrerpolicy="strict-origin-when-cross-origin" title="USAHI Location"></iframe>
+      </div>
+      <div class="review-summary">
+        <div class="review-score">4.9</div>
+        <div class="review-stars">
+          <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+        </div>
+        <div class="review-count">Based on 500+ Google Reviews</div>
+        <div style="margin-bottom:24px">
+          <a href="https://maps.app.goo.gl/F7u7NuG1m4gHKw1eA" target="_blank" rel="noopener" class="btn btn-dark" style="width:100%;justify-content:center"><i class="fab fa-google"></i> See All Reviews on Google</a>
+        </div>
+        <div class="review-badges">
+          <div class="review-badge">
+            <div class="badge-icon" style="background:#005a78"><i class="fas fa-shield-check" style="color:#fff;font-size:18px"></i></div>
+            <div><div class="badge-name">BBB A+ Rated</div><div class="badge-detail">Better Business Bureau Accredited</div></div>
+          </div>
+          <div class="review-badge">
+            <div class="badge-icon" style="background:var(--primary)"><i class="fas fa-id-card" style="color:#fff;font-size:18px"></i></div>
+            <div><div class="badge-name">Licensed & Insured</div><div class="badge-detail">CGC1526707 &bull; CAC1813665</div></div>
+          </div>
+          <div class="review-badge">
+            <div class="badge-icon" style="background:linear-gradient(135deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888)"><i class="fab fa-instagram" style="color:#fff;font-size:18px"></i></div>
+            <div><div class="badge-name">Follow Us @gousahi</div><div class="badge-detail">See our latest projects on Instagram</div></div>
+          </div>
+        </div>
+        <div style="margin-top:24px;padding:20px;background:var(--light);border-radius:10px;text-align:left">
+          <p style="font-size:14px;font-weight:600;margin-bottom:4px"><i class="fas fa-location-dot" style="color:var(--primary);margin-right:8px"></i> 580 Ansin Blvd</p>
+          <p style="font-size:14px;color:var(--gray);margin-left:24px">Hallandale Beach, FL 33009</p>
+          <p style="font-size:14px;margin-top:8px"><i class="fas fa-envelope" style="color:var(--primary);margin-right:8px"></i> info@gousahi.com</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section" id="contact">
+  <div class="container reveal">
+    <span class="section-label" style="color:var(--accent-light)">Ready to Protect Your Home?</span>
+    <h2>Get Your Free Estimate Today</h2>
+    <p>Call us now or fill out the form above. Our specialists are standing by.</p>
+    <a href="tel:8775546373" class="cta-phone"><i class="fas fa-phone-volume"></i> (877) 554-6373</a>
+    <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap">
+      <a href="#get-quote" class="btn btn-primary"><i class="fas fa-calendar-check"></i> Schedule Free Estimate</a>
+      <a href="https://maps.app.goo.gl/F7u7NuG1m4gHKw1eA" target="_blank" rel="noopener" class="btn btn-outline-white"><i class="fas fa-location-dot"></i> Visit Showroom</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <img src="assets/logo.webp" alt="USA Home Improvement" style="filter:brightness(0) invert(1)">
+        <p>South Florida's most trusted home improvement company. Serving Miami-Dade, Broward, and Palm Beach counties for over 15 years.</p>
+        <div class="footer-social">
+          <a href="https://www.facebook.com/gousahi" target="_blank" rel="noopener" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="https://www.instagram.com/gousahi/" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="https://www.youtube.com/@USAHomeImprovementLLC" target="_blank" rel="noopener" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+          <a href="https://www.bbb.org/us/fl/hallandale/profile/windows/usa-home-improvement-llc-0633-90539009" target="_blank" rel="noopener" aria-label="BBB"><i class="fas fa-shield-halved"></i></a>
+        </div>
+      </div>
+      <div>
+        <h5>Services</h5>
+        <ul>
+          <li><a href="#">Impact Windows</a></li>
+          <li><a href="#">Impact Doors</a></li>
+          <li><a href="#">Roofing</a></li>
+          <li><a href="#">HVAC / AC</a></li>
+          <li><a href="#">Painting</a></li>
+          <li><a href="#">Insulation</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Company</h5>
+        <ul>
+          <li><a href="https://usahomeimprovement.com" target="_blank" rel="noopener">Main Website</a></li>
+          <li><a href="#projects">Our Projects</a></li>
+          <li><a href="#reviews">Reviews</a></li>
+          <li><a href="#team">Our Team</a></li>
+          <li><a href="#get-quote">Free Estimate</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Contact</h5>
+        <ul>
+          <li><a href="tel:8775546373"><i class="fas fa-phone" style="margin-right:8px;color:var(--accent)"></i>(877) 554-6373</a></li>
+          <li><a href="mailto:info@gousahi.com"><i class="fas fa-envelope" style="margin-right:8px;color:var(--accent)"></i>info@gousahi.com</a></li>
+          <li><a href="https://maps.app.goo.gl/F7u7NuG1m4gHKw1eA" target="_blank" rel="noopener"><i class="fas fa-location-dot" style="margin-right:8px;color:var(--accent)"></i>580 Ansin Blvd, Hallandale Beach, FL 33009</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2025 USA Home Improvement LLC. All rights reserved.</span>
+      <div class="footer-licenses">
+        <span><i class="fas fa-id-card"></i> CGC1526707</span>
+        <span><i class="fas fa-id-card"></i> CAC1813665</span>
+        <span><i class="fas fa-shield-check"></i> Licensed & Insured</span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- FLOATING FORM -->
+<div class="floating-form" id="floatingForm">
+  <div class="form-tab" onclick="toggleFloatingForm()">FREE QUOTE</div>
+  <button class="form-close" onclick="toggleFloatingForm()">&times;</button>
+  <h3>Get a Free Quote</h3>
+  <p class="form-sub">Fast response &bull; No obligation</p>
+  <form onsubmit="handleFormSubmit(event)">
+    <div class="form-group"><input type="text" placeholder="Full Name *" required></div>
+    <div class="form-group"><input type="tel" placeholder="Phone *" required></div>
+    <div class="form-group"><input type="email" placeholder="Email *" required></div>
+    <div class="form-group"><input type="text" placeholder="Zip Code *" required></div>
+    <div class="form-group">
+      <select required>
+        <option value="" disabled selected>Service Needed</option>
+        <option>Impact Windows</option>
+        <option>Impact Doors</option>
+        <option>Windows & Doors</option>
+        <option>Roofing</option>
+        <option>HVAC</option>
+        <option>Other</option>
+      </select>
+    </div>
+    <button type="submit" class="form-submit">Get My Free Quote</button>
+  </form>
+</div>
+
+<script src="https://www.youtube.com/iframe_api"></script>
+<script>
+// YOUTUBE SOUND TOGGLE
+var ytPlayer;
+function onYouTubeIframeAPIReady(){
+  ytPlayer=new YT.Player('heroYT',{
+    events:{'onReady':function(e){e.target.mute();}}
+  });
+}
+var ytMuted=true;
+function toggleYTSound(){
+  if(!ytPlayer)return;
+  var btn=document.getElementById('ytSoundToggle');
+  if(ytMuted){ytPlayer.unMute();ytMuted=false;btn.innerHTML='<i class="fas fa-volume-high"></i>'}
+  else{ytPlayer.mute();ytMuted=true;btn.innerHTML='<i class="fas fa-volume-xmark"></i>'}
+}
+var ytPaused=false;
+function toggleYTPause(){
+  if(!ytPlayer)return;
+  var btn=document.getElementById('ytPauseBtn');
+  if(ytPaused){ytPlayer.playVideo();ytPaused=false;btn.innerHTML='<i class="fas fa-pause"></i>'}
+  else{ytPlayer.pauseVideo();ytPaused=true;btn.innerHTML='<i class="fas fa-play"></i>'}
+}
+
+// GENERIC SOUND TOGGLE FOR ALL LOCAL VIDEOS
+function toggleVideoSound(videoId,btn){
+  var v=document.getElementById(videoId);
+  v.muted=!v.muted;
+  btn.innerHTML=v.muted?'<i class="fas fa-volume-xmark"></i>':'<i class="fas fa-volume-high"></i>';
+}
+
+// WHY VIDEO with pause button
+function toggleWhyVideo(){
+  const v=document.getElementById('whyVideo');
+  const o=document.getElementById('whyPlayOverlay');
+  const p=document.getElementById('whyPauseBtn');
+  if(v.paused){v.play();o.style.display='none';p.style.display='flex'}
+  else{v.pause();o.style.display='flex';p.style.display='none'}
+}
+
+// TESTING VIDEOS with pause buttons
+function toggleTestVideo(videoId,playId,pauseId){
+  const v=document.getElementById(videoId);
+  const o=document.getElementById(playId);
+  const p=document.getElementById(pauseId);
+  if(v.paused){v.play();o.style.display='none';p.style.display='flex'}
+  else{v.pause();o.style.display='flex';p.style.display='none'}
+}
+
+// NAVBAR SCROLL
+window.addEventListener('scroll',()=>{
+  document.getElementById('navbar').classList.toggle('scrolled',window.scrollY>50);
+});
+
+// FLOATING FORM
+function toggleFloatingForm(){
+  document.getElementById('floatingForm').classList.toggle('open');
+}
+
+// FORM SUBMIT
+function handleFormSubmit(e){
+  e.preventDefault();
+  const btn=e.target.querySelector('button[type="submit"]');
+  const orig=btn.innerHTML;
+  btn.innerHTML='<i class="fas fa-check"></i> Thank You!';
+  btn.style.background='#22c55e';
+  btn.style.color='#fff';
+  setTimeout(()=>{btn.innerHTML=orig;btn.style.background='';btn.style.color='';e.target.reset()},3000);
+}
+
+// BEFORE/AFTER SLIDERS
+document.querySelectorAll('[data-ba]').forEach(item=>{
+  let isDown=false;
+  const move=(x)=>{
+    const rect=item.getBoundingClientRect();
+    let pct=((x-rect.left)/rect.width)*100;
+    pct=Math.max(2,Math.min(98,pct));
+    item.querySelector('.ba-after').style.clipPath=`inset(0 0 0 ${pct}%)`;
+    item.querySelector('.ba-slider').style.left=pct+'%';
+    item.querySelector('.ba-handle').style.left=pct+'%';
+  };
+  item.addEventListener('mousedown',e=>{isDown=true;move(e.clientX)});
+  item.addEventListener('mousemove',e=>{if(isDown)move(e.clientX)});
+  document.addEventListener('mouseup',()=>isDown=false);
+  item.addEventListener('touchstart',e=>{isDown=true;move(e.touches[0].clientX)},{passive:true});
+  item.addEventListener('touchmove',e=>{if(isDown)move(e.touches[0].clientX)},{passive:true});
+  item.addEventListener('touchend',()=>isDown=false);
+});
+
+// LIGHTBOX
+const projects={
+  project1:['assets/homes/1A.jpg','assets/homes/2A.jpg','assets/homes/3A.jpg','assets/homes/4A.jpg','assets/homes/5A.jpg','assets/homes/6A.jpg','assets/homes/7A.jpg','assets/homes/8A.jpg'],
+  project2:['assets/homes/5A.jpg','assets/homes/6A.jpg','assets/homes/7A.jpg','assets/homes/8A.jpg','assets/homes/9A.jpg','assets/homes/10A.jpg'],
+  project3:['assets/homes/9A.jpg','assets/homes/10A.jpg','assets/homes/11A.jpg','assets/homes/12A.jpg','assets/homes/13A.jpg','assets/homes/14A.jpg','assets/homes/15A.jpg'],
+  project4:['assets/homes/13A.jpg','assets/homes/14A.jpg','assets/homes/15A.jpg','assets/homes/16A.jpg','assets/homes/17A.jpg'],
+  project5:['assets/homes/17A.jpg','assets/homes/18A.jpg','assets/homes/20A.jpg','assets/homes/21A.jpg','assets/homes/22A.jpg','assets/homes/25.jpg'],
+  project6:['assets/homes/DJI_0048.jpg','assets/homes/web-2.jpg','assets/homes/web-17 (1).jpg','assets/homes/web-38.jpg','assets/homes/31.jpg'],
+  project7:['assets/homes/22A.jpg','assets/homes/25.jpg','assets/homes/31.jpg','assets/homes/32A.jpg'],
+  project8:['assets/homes/web-2.jpg','assets/homes/COCINA PATIO_.png','assets/homes/SALA-TERRAZA_FRONTAL 2.1.png','assets/homes/SALA V2.png','assets/homes/MAR SALA 2.png'],
+  project9:['assets/homes/SALA V2.png','assets/homes/COCINA PATIO_.png','assets/homes/MAR SALA 2.png'],
+  testimonials:[
+    'assets/testimonials/PHOTO-2025-07-08-14-18-17.jpg',
+    'assets/testimonials/PHOTO-2025-06-30-10-57-34.jpg',
+    'assets/testimonials/PHOTO-2025-06-20-16-26-05.jpg',
+    'assets/testimonials/PHOTO-2025-06-06-12-16-49.jpg',
+    'assets/testimonials/PHOTO-2025-05-27-09-55-36.jpg',
+    'assets/testimonials/PHOTO-2025-05-14-17-40-19.jpg',
+    'assets/testimonials/PHOTO-2025-05-09-16-18-17.jpg',
+    'assets/testimonials/PHOTO-2025-05-09-14-27-19.jpg',
+    'assets/testimonials/PHOTO-2025-05-09-11-32-18.jpg',
+    'assets/testimonials/PHOTO-2025-05-07-16-31-36.jpg',
+    'assets/testimonials/PHOTO-2025-04-03-16-30-59.jpg',
+    'assets/testimonials/PHOTO-2025-04-03-15-27-01.jpg',
+    'assets/testimonials/PHOTO-2025-03-27-18-14-20.jpg',
+    'assets/testimonials/PHOTO-2025-03-21-11-36-56.jpg',
+    'assets/testimonials/PHOTO-2025-03-12-15-21-25.jpg',
+    'assets/testimonials/PHOTO-2025-02-25-12-10-55.jpg'
+  ]
+};
+let currentProject=null,currentIndex=0;
+function openLightbox(proj,idx){
+  currentProject=proj;currentIndex=idx;
+  const imgs=projects[proj];if(!imgs)return;
+  document.getElementById('lightboxImg').src=imgs[idx];
+  document.getElementById('lightboxCounter').textContent=`${idx+1} / ${imgs.length}`;
+  document.getElementById('lightboxThumbs').innerHTML=imgs.map((src,i)=>`<img src="${src}" class="${i===idx?'active':''}" onclick="jumpTo(${i})" alt="Thumbnail">`).join('');
+  document.getElementById('lightbox').classList.add('active');
+  document.body.style.overflow='hidden';
+}
+function closeLightbox(){document.getElementById('lightbox').classList.remove('active');document.body.style.overflow=''}
+function navigateLightbox(dir){
+  const imgs=projects[currentProject];
+  currentIndex=(currentIndex+dir+imgs.length)%imgs.length;
+  document.getElementById('lightboxImg').src=imgs[currentIndex];
+  document.getElementById('lightboxCounter').textContent=`${currentIndex+1} / ${imgs.length}`;
+  document.querySelectorAll('.lightbox-thumbs img').forEach((t,i)=>t.classList.toggle('active',i===currentIndex));
+}
+function jumpTo(idx){currentIndex=idx;navigateLightbox(0)}
+document.getElementById('lightbox').addEventListener('click',e=>{if(e.target===document.getElementById('lightbox'))closeLightbox()});
+document.addEventListener('keydown',e=>{
+  if(!document.getElementById('lightbox').classList.contains('active'))return;
+  if(e.key==='Escape')closeLightbox();
+  if(e.key==='ArrowLeft')navigateLightbox(-1);
+  if(e.key==='ArrowRight')navigateLightbox(1);
+});
+
+// SCROLL REVEAL
+const observer=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');observer.unobserve(e.target)}});
+},{threshold:.1,rootMargin:'0px 0px -50px 0px'});
+document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
+
+// MOBILE NAV
+const mobileStyle=document.createElement('style');
+mobileStyle.textContent=`@media(max-width:1024px){.nav-links.show{display:flex!important;position:absolute;top:100%;left:0;right:0;background:#fff;flex-direction:column;padding:20px;box-shadow:0 8px 24px rgba(0,0,0,.1);gap:12px}}`;
+document.head.appendChild(mobileStyle);
+</script>
+
+</body>
+</html>
