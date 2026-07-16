@@ -584,11 +584,6 @@ body{font-family:'Poppins',sans-serif;color:#1e293b;line-height:1.6;overflow-x:h
         <span class="photo-count"><i class="fas fa-images"></i> 6 Photos</span>
         <div class="overlay"><span><i class="fas fa-expand"></i> View Full Project</span></div>
       </div>
-      <div class="project-card reveal" onclick="openLightbox('project6',0)">
-        <img src="assets/homes/DJI_0048.jpg" alt="Aerial view">
-        <span class="photo-count"><i class="fas fa-images"></i> 5 Photos</span>
-        <div class="overlay"><span><i class="fas fa-expand"></i> View Full Project</span></div>
-      </div>
       <div class="project-card reveal" onclick="openLightbox('project7',0)">
         <img src="assets/homes/22A.jpg" alt="Completed home">
         <span class="photo-count"><i class="fas fa-images"></i> 4 Photos</span>
@@ -1107,22 +1102,17 @@ function toggleYTSound(){
   if(ytMutedState['heroYT']){p.unMute();ytMutedState['heroYT']=false;btn.innerHTML='<i class="fas fa-volume-high"></i>'}
   else{p.mute();ytMutedState['heroYT']=true;btn.innerHTML='<i class="fas fa-volume-xmark"></i>'}
 }
-function toggleYTPause(){
-  var p=ytPlayers['heroYT'];if(!p)return;
-  var btn=document.getElementById('ytPauseBtn');
-  if(ytPausedState['heroYT']){p.playVideo();ytPausedState['heroYT']=false;btn.innerHTML='<i class="fas fa-pause"></i>'}
-  else{p.pauseVideo();ytPausedState['heroYT']=true;btn.innerHTML='<i class="fas fa-play"></i>'}
+function toggleYTPause(id,btnId){
+  id=id||'heroYT';btnId=btnId||'ytPauseBtn';
+  var p=ytPlayers[id];if(!p)return;
+  var btn=document.getElementById(btnId);
+  if(ytPausedState[id]){p.playVideo();ytPausedState[id]=false;btn.innerHTML='<i class="fas fa-pause"></i>'}
+  else{p.pauseVideo();ytPausedState[id]=true;btn.innerHTML='<i class="fas fa-play"></i>'}
 }
 function toggleYTVideoSound(id,btn){
   var p=ytPlayers[id];if(!p)return;
   if(ytMutedState[id]){p.unMute();ytMutedState[id]=false;btn.innerHTML='<i class="fas fa-volume-high"></i>'}
   else{p.mute();ytMutedState[id]=true;btn.innerHTML='<i class="fas fa-volume-xmark"></i>'}
-}
-function toggleYTPause(id,btnId){
-  var p=ytPlayers[id];if(!p)return;
-  var btn=document.getElementById(btnId);
-  if(ytPausedState[id]){p.playVideo();ytPausedState[id]=false;btn.innerHTML='<i class="fas fa-pause"></i>'}
-  else{p.pauseVideo();ytPausedState[id]=true;btn.innerHTML='<i class="fas fa-play"></i>'}
 }
 
 // NAVBAR SCROLL
@@ -1172,7 +1162,6 @@ const projects={
   project3:['assets/homes/9A.jpg','assets/homes/10A.jpg','assets/homes/11A.jpg','assets/homes/12A.jpg','assets/homes/13A.jpg','assets/homes/14A.jpg','assets/homes/15A.jpg'],
   project4:['assets/homes/13A.jpg','assets/homes/14A.jpg','assets/homes/15A.jpg','assets/homes/16A.jpg','assets/homes/17A.jpg'],
   project5:['assets/homes/17A.jpg','assets/homes/18A.jpg','assets/homes/20A.jpg','assets/homes/21A.jpg','assets/homes/22A.jpg','assets/homes/25.jpg'],
-  project6:['assets/homes/DJI_0048.jpg','assets/homes/web-2.jpg','assets/homes/web-17 (1).jpg','assets/homes/web-38.jpg','assets/homes/31.jpg'],
   project7:['assets/homes/22A.jpg','assets/homes/25.jpg','assets/homes/31.jpg','assets/homes/32A.jpg'],
   project8:['assets/homes/web-2.jpg','assets/homes/COCINA PATIO_.png','assets/homes/SALA-TERRAZA_FRONTAL 2.1.png','assets/homes/SALA V2.png','assets/homes/MAR SALA 2.png'],
   project9:['assets/homes/SALA V2.png','assets/homes/COCINA PATIO_.png','assets/homes/MAR SALA 2.png'],
