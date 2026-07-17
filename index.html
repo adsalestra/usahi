@@ -488,24 +488,29 @@ body{font-family:'Poppins',sans-serif;color:#1e293b;line-height:1.6;overflow-x:h
       <div class="inline-form-card reveal">
         <h3>Request Your Free Quote</h3>
         <p class="sub">No obligation. A specialist will contact you shortly.</p>
-        <form id="quoteForm" onsubmit="handleFormSubmit(event)">
-          <div class="form-group"><input type="text" placeholder="Full Name *" required></div>
-          <div class="form-group"><input type="tel" placeholder="Phone Number *" required></div>
-          <div class="form-group"><input type="email" placeholder="Email Address *" required></div>
-          <div class="form-group"><input type="text" placeholder="Zip Code *" required></div>
+        <form id="quoteForm" action="https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8" method="POST" onsubmit="return handleSFSubmit(event)">
+          <input type="hidden" name="oid" value="00D0b000000vM4y">
+          <input type="hidden" name="retURL" value="https://quote.usahomeimprovement.com/thank-you/">
+          <input type="hidden" name="lead_source" value="Website">
+          <input type="hidden" name="company" value="Homeowner (Web Lead)">
+          <input type="hidden" name="first_name" value="">
+          <input type="hidden" name="last_name" value="">
+          <div class="form-group"><input type="text" class="sf-fullname" placeholder="Full Name *" required></div>
+          <div class="form-group"><input type="tel" name="phone" placeholder="Phone Number *" required></div>
+          <div class="form-group"><input type="email" name="email" placeholder="Email Address *" required></div>
+          <div class="form-group"><input type="text" name="zip" placeholder="Zip Code *" required></div>
           <div class="form-group">
-            <select required>
+            <select name="00N5a00000DXmGJ" required>
               <option value="" disabled selected>What are you interested in?</option>
-              <option>Impact Windows</option>
-              <option>Impact Doors</option>
-              <option>Windows & Doors</option>
-              <option>Roofing</option>
-              <option>HVAC / AC</option>
-              <option>Other</option>
+              <option value="Impact Windows">Impact Windows</option>
+              <option value="Impact Doors">Impact Doors</option>
+              <option value="Windows &amp; Doors">Windows & Doors</option>
+              <option value="Roofing">Roofing</option>
+              <option value="HVAC / AC">HVAC / AC</option>
             </select>
           </div>
-          <div class="form-group"><textarea placeholder="Tell us about your project (optional)"></textarea></div>
-          <div class="sms-consent"><input type="checkbox" id="smsConsent"><label for="smsConsent">By checking this box, you agree to receive marketing text messages from USA Home Improvement at the number provided. Message & data rates may apply. Reply STOP to unsubscribe.</label></div>
+          <div class="form-group"><textarea name="description" placeholder="Tell us about your project (optional)"></textarea></div>
+          <div class="sms-consent"><input type="checkbox" id="smsConsent" name="00NQQ00000IECjh" value="1"><label for="smsConsent">By checking this box, you agree to receive marketing text messages from USA Home Improvement at the number provided. Message & data rates may apply. Reply STOP to unsubscribe.</label></div>
           <button type="submit" class="form-submit"><i class="fas fa-paper-plane"></i> Get My Free Quote</button>
         </form>
       </div>
@@ -1065,23 +1070,28 @@ body{font-family:'Poppins',sans-serif;color:#1e293b;line-height:1.6;overflow-x:h
   <button class="form-close" onclick="toggleFloatingForm()">&times;</button>
   <h3>Get a Free Quote</h3>
   <p class="form-sub">Fast response &bull; No obligation</p>
-  <form onsubmit="handleFormSubmit(event)">
-    <div class="form-group"><input type="text" placeholder="Full Name *" required></div>
-    <div class="form-group"><input type="tel" placeholder="Phone *" required></div>
-    <div class="form-group"><input type="email" placeholder="Email *" required></div>
-    <div class="form-group"><input type="text" placeholder="Zip Code *" required></div>
+  <form action="https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8" method="POST" onsubmit="return handleSFSubmit(event)">
+    <input type="hidden" name="oid" value="00D0b000000vM4y">
+    <input type="hidden" name="retURL" value="https://quote.usahomeimprovement.com/thank-you/">
+    <input type="hidden" name="lead_source" value="Website">
+    <input type="hidden" name="company" value="Homeowner (Web Lead)">
+    <input type="hidden" name="first_name" value="">
+    <input type="hidden" name="last_name" value="">
+    <div class="form-group"><input type="text" class="sf-fullname" placeholder="Full Name *" required></div>
+    <div class="form-group"><input type="tel" name="phone" placeholder="Phone *" required></div>
+    <div class="form-group"><input type="email" name="email" placeholder="Email *" required></div>
+    <div class="form-group"><input type="text" name="zip" placeholder="Zip Code *" required></div>
     <div class="form-group">
-      <select required>
+      <select name="00N5a00000DXmGJ" required>
         <option value="" disabled selected>Service Needed</option>
-        <option>Impact Windows</option>
-        <option>Impact Doors</option>
-        <option>Windows & Doors</option>
-        <option>Roofing</option>
-        <option>HVAC</option>
-        <option>Other</option>
+        <option value="Impact Windows">Impact Windows</option>
+        <option value="Impact Doors">Impact Doors</option>
+        <option value="Windows &amp; Doors">Windows & Doors</option>
+        <option value="Roofing">Roofing</option>
+        <option value="HVAC / AC">HVAC / AC</option>
       </select>
     </div>
-    <div class="sms-consent"><input type="checkbox" id="smsConsentFloat"><label for="smsConsentFloat">By checking this box, you agree to receive marketing text messages from USA Home Improvement at the number provided. Message & data rates may apply. Reply STOP to unsubscribe.</label></div>
+    <div class="sms-consent"><input type="checkbox" id="smsConsentFloat" name="00NQQ00000IECjh" value="1"><label for="smsConsentFloat">By checking this box, you agree to receive marketing text messages from USA Home Improvement at the number provided. Message & data rates may apply. Reply STOP to unsubscribe.</label></div>
     <button type="submit" class="form-submit">Get My Free Quote</button>
   </form>
 </div>
@@ -1134,14 +1144,21 @@ function toggleFloatingForm(){
 }
 
 // FORM SUBMIT
-function handleFormSubmit(e){
-  e.preventDefault();
-  const btn=e.target.querySelector('button[type="submit"]');
-  const orig=btn.innerHTML;
-  btn.innerHTML='<i class="fas fa-check"></i> Thank You!';
-  btn.style.background='#22c55e';
-  btn.style.color='#fff';
-  setTimeout(()=>{btn.innerHTML=orig;btn.style.background='';btn.style.color='';e.target.reset()},3000);
+function handleSFSubmit(e){
+  const form=e.target;
+  // Salesforce needs first_name + last_name; the visible field is a single "Full Name".
+  const full=(form.querySelector('.sf-fullname').value||'').trim().replace(/\s+/g,' ');
+  const parts=full.split(' ');
+  // last_name is the required Salesforce field, so a single-word name goes there.
+  form.querySelector('input[name="last_name"]').value  = parts.length>1 ? parts.slice(1).join(' ') : full;
+  form.querySelector('input[name="first_name"]').value = parts.length>1 ? parts[0] : '';
+  // No preventDefault: the form POSTs to Salesforce, which saves the lead and
+  // then redirects the visitor to retURL (/thank-you/). Show a brief "Sending"
+  // state on the button while that round-trip happens.
+  const btn=form.querySelector('button[type="submit"]');
+  btn.disabled=true;
+  btn.innerHTML='<i class="fas fa-circle-notch fa-spin"></i> Sending...';
+  return true;
 }
 
 // BEFORE/AFTER SLIDERS
