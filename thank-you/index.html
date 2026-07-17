@@ -3,6 +3,14 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- Microsoft Clarity (heatmaps & session recordings) -->
+<script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "xnzl94h7lc");
+</script>
 <title>Thank You | USA Home Improvement</title>
 <meta name="robots" content="noindex, nofollow">
 <link rel="icon" type="image/webp" href="/assets/logo.webp">
@@ -10,43 +18,24 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
 <!-- =================================================================== -->
-<!-- LEAD CONVERSION TRACKING                                             -->
-<!-- This page loads ONLY after Salesforce saves the lead, so it is the   -->
-<!-- reliable place to count the conversion (a button-click push can be   -->
-<!-- lost to the redirect). The dataLayer event fires on page load below. -->
+<!-- LEAD CONVERSION TRACKING — fires once, on this page. It loads only   -->
+<!-- after Salesforce saves the lead, so it's the reliable trigger.       -->
 <!-- =================================================================== -->
-
-<!-- dataLayer must exist before GTM (or any consumer) loads. -->
+<!-- Google tag (gtag.js) — Google Ads -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-709144889"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'AW-709144889');
 </script>
-
-<!-- STEP 1 — TAG CONTAINER (needs your IDs; nothing reaches Google Ads until this exists).
-     Option A (Google Tag Manager): paste your GTM container snippet here (GTM-XXXXXXX),
-       then in GTM create a Custom Event trigger on `generate_lead` firing your
-       Google Ads Conversion tag (Conversion ID + Label).
-     Option B (gtag.js, no GTM): paste the Google Ads global site tag here instead,
-       and see the gtag alternative noted in STEP 2.
-     ----------------------------------------------------------------------------------
-     <script async src="https://www.googletagmanager.com/gtm.js?id=GTM-XXXXXXX"></script>
--->
-
-<!-- STEP 2 — Fire the lead conversion event on page load. -->
+<!-- Event snippet for Submit lead form (4) conversion page -->
 <script>
-  window.dataLayer.push({
-    event: 'generate_lead',      // GTM Custom Event trigger listens for this
-    lead_type: 'quote_request',
-    form_location: 'usahi_website',
-    value: 0,                    // TODO: set an estimated lead value for value-based bidding
-    currency: 'USD'
+  gtag('event', 'conversion', {
+      'send_to': 'AW-709144889/lfHxCI3ZmdIcELniktIC',
+      'value': 1.0,
+      'currency': 'USD'
   });
-
-  // --- gtag alternative (use INSTEAD of GTM if you loaded gtag.js in STEP 1) ---
-  // gtag('event', 'conversion', {
-  //   send_to: 'AW-XXXXXXXXXX/XXXXXXXXXXXXXXXXX',  // your Conversion ID / Label
-  //   value: 0,
-  //   currency: 'USD'
-  // });
 </script>
 
 <style>

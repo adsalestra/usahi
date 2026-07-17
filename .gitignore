@@ -7,3 +7,6 @@ Thumbs.db
 
 # Vercel
 .vercel
+
+# Local-only docs / handoffs (never push to the repo)
+local-docs/
