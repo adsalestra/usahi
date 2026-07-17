@@ -10,12 +10,44 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
 <!-- =================================================================== -->
-<!-- CONVERSION TRACKING GOES HERE                                        -->
-<!-- This page is the confirmation/"conversion" destination. When you're  -->
-<!-- ready, drop your Google Ads conversion snippet and/or GA4 event      -->
-<!-- here so a lead is counted every time this page loads. No IDs are     -->
-<!-- hardcoded yet — ask and I'll wire it in.                             -->
+<!-- LEAD CONVERSION TRACKING                                             -->
+<!-- This page loads ONLY after Salesforce saves the lead, so it is the   -->
+<!-- reliable place to count the conversion (a button-click push can be   -->
+<!-- lost to the redirect). The dataLayer event fires on page load below. -->
 <!-- =================================================================== -->
+
+<!-- dataLayer must exist before GTM (or any consumer) loads. -->
+<script>
+  window.dataLayer = window.dataLayer || [];
+</script>
+
+<!-- STEP 1 — TAG CONTAINER (needs your IDs; nothing reaches Google Ads until this exists).
+     Option A (Google Tag Manager): paste your GTM container snippet here (GTM-XXXXXXX),
+       then in GTM create a Custom Event trigger on `generate_lead` firing your
+       Google Ads Conversion tag (Conversion ID + Label).
+     Option B (gtag.js, no GTM): paste the Google Ads global site tag here instead,
+       and see the gtag alternative noted in STEP 2.
+     ----------------------------------------------------------------------------------
+     <script async src="https://www.googletagmanager.com/gtm.js?id=GTM-XXXXXXX"></script>
+-->
+
+<!-- STEP 2 — Fire the lead conversion event on page load. -->
+<script>
+  window.dataLayer.push({
+    event: 'generate_lead',      // GTM Custom Event trigger listens for this
+    lead_type: 'quote_request',
+    form_location: 'usahi_website',
+    value: 0,                    // TODO: set an estimated lead value for value-based bidding
+    currency: 'USD'
+  });
+
+  // --- gtag alternative (use INSTEAD of GTM if you loaded gtag.js in STEP 1) ---
+  // gtag('event', 'conversion', {
+  //   send_to: 'AW-XXXXXXXXXX/XXXXXXXXXXXXXXXXX',  // your Conversion ID / Label
+  //   value: 0,
+  //   currency: 'USD'
+  // });
+</script>
 
 <style>
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}

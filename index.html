@@ -496,8 +496,8 @@ body{font-family:'Poppins',sans-serif;color:#1e293b;line-height:1.6;overflow-x:h
           <input type="hidden" name="first_name" value="">
           <input type="hidden" name="last_name" value="">
           <div class="form-group"><input type="text" class="sf-fullname" placeholder="Full Name *" required></div>
-          <div class="form-group"><input type="tel" name="phone" placeholder="Phone Number *" required></div>
-          <div class="form-group"><input type="email" name="email" placeholder="Email Address *" required></div>
+          <div class="form-group"><input type="tel" name="phone" inputmode="tel" pattern="(\+?1[\s.-]?)?\(?\d{3}\)?[\s.-]?\d{3}[\s.-]?\d{4}" title="Enter a valid 10-digit US phone number, e.g. (954) 228-8636" placeholder="Phone Number *" required></div>
+          <div class="form-group"><input type="email" name="email" pattern="[^@\s]+@[^@\s]+\.[^@\s]{2,}" title="Enter a valid email address, e.g. name@example.com" placeholder="Email Address *" required></div>
           <div class="form-group"><input type="text" name="zip" placeholder="Zip Code *" required></div>
           <div class="form-group">
             <select name="00N5a00000DXmGJ" required>
@@ -511,6 +511,7 @@ body{font-family:'Poppins',sans-serif;color:#1e293b;line-height:1.6;overflow-x:h
           </div>
           <div class="form-group"><textarea name="description" placeholder="Tell us about your project (optional)"></textarea></div>
           <div class="sms-consent"><input type="checkbox" id="smsConsent" name="00NQQ00000IECjh" value="1"><label for="smsConsent">By checking this box, you agree to receive marketing text messages from USA Home Improvement at the number provided. Message & data rates may apply. Reply STOP to unsubscribe.</label></div>
+          <div class="sms-consent"><input type="checkbox" id="emailConsent" name="00NQQ00000LZdDh" value="1"><label for="emailConsent">By checking this box, you agree to receive marketing emails from USA Home Improvement. You can unsubscribe at any time.</label></div>
           <button type="submit" class="form-submit"><i class="fas fa-paper-plane"></i> Get My Free Quote</button>
         </form>
       </div>
@@ -1078,8 +1079,8 @@ body{font-family:'Poppins',sans-serif;color:#1e293b;line-height:1.6;overflow-x:h
     <input type="hidden" name="first_name" value="">
     <input type="hidden" name="last_name" value="">
     <div class="form-group"><input type="text" class="sf-fullname" placeholder="Full Name *" required></div>
-    <div class="form-group"><input type="tel" name="phone" placeholder="Phone *" required></div>
-    <div class="form-group"><input type="email" name="email" placeholder="Email *" required></div>
+    <div class="form-group"><input type="tel" name="phone" inputmode="tel" pattern="(\+?1[\s.-]?)?\(?\d{3}\)?[\s.-]?\d{3}[\s.-]?\d{4}" title="Enter a valid 10-digit US phone number, e.g. (954) 228-8636" placeholder="Phone *" required></div>
+    <div class="form-group"><input type="email" name="email" pattern="[^@\s]+@[^@\s]+\.[^@\s]{2,}" title="Enter a valid email address, e.g. name@example.com" placeholder="Email *" required></div>
     <div class="form-group"><input type="text" name="zip" placeholder="Zip Code *" required></div>
     <div class="form-group">
       <select name="00N5a00000DXmGJ" required>
@@ -1092,6 +1093,7 @@ body{font-family:'Poppins',sans-serif;color:#1e293b;line-height:1.6;overflow-x:h
       </select>
     </div>
     <div class="sms-consent"><input type="checkbox" id="smsConsentFloat" name="00NQQ00000IECjh" value="1"><label for="smsConsentFloat">By checking this box, you agree to receive marketing text messages from USA Home Improvement at the number provided. Message & data rates may apply. Reply STOP to unsubscribe.</label></div>
+    <div class="sms-consent"><input type="checkbox" id="emailConsentFloat" name="00NQQ00000LZdDh" value="1"><label for="emailConsentFloat">By checking this box, you agree to receive marketing emails from USA Home Improvement. You can unsubscribe at any time.</label></div>
     <button type="submit" class="form-submit">Get My Free Quote</button>
   </form>
 </div>
@@ -1146,20 +1148,51 @@ function toggleFloatingForm(){
 // FORM SUBMIT
 function handleSFSubmit(e){
   const form=e.target;
+  const phone=form.querySelector('input[name="phone"]');
+  const email=form.querySelector('input[name="email"]');
+
+  // Validate phone: must be a 10-digit US number (an optional leading 1 is allowed).
+  let digits=(phone.value||'').replace(/\D/g,'');
+  if(digits.length===11 && digits.charAt(0)==='1') digits=digits.slice(1);
+  if(digits.length!==10){
+    e.preventDefault();
+    phone.setCustomValidity('Please enter a valid 10-digit US phone number, e.g. (954) 228-8636.');
+    phone.reportValidity();
+    return false;
+  }
+  phone.setCustomValidity('');
+
+  // Validate email: require name@domain.tld (type=email alone accepts "a@b").
+  if(!/^[^@\s]+@[^@\s]+\.[^@\s]{2,}$/.test((email.value||'').trim())){
+    e.preventDefault();
+    email.setCustomValidity('Please enter a valid email address, e.g. name@example.com.');
+    email.reportValidity();
+    return false;
+  }
+  email.setCustomValidity('');
+
+  // Normalize the validated phone to (XXX) XXX-XXXX so Salesforce gets clean data.
+  phone.value='('+digits.slice(0,3)+') '+digits.slice(3,6)+'-'+digits.slice(6);
+
   // Salesforce needs first_name + last_name; the visible field is a single "Full Name".
   const full=(form.querySelector('.sf-fullname').value||'').trim().replace(/\s+/g,' ');
   const parts=full.split(' ');
   // last_name is the required Salesforce field, so a single-word name goes there.
   form.querySelector('input[name="last_name"]').value  = parts.length>1 ? parts.slice(1).join(' ') : full;
   form.querySelector('input[name="first_name"]').value = parts.length>1 ? parts[0] : '';
-  // No preventDefault: the form POSTs to Salesforce, which saves the lead and
-  // then redirects the visitor to retURL (/thank-you/). Show a brief "Sending"
-  // state on the button while that round-trip happens.
+  // No preventDefault beyond this point: the form POSTs to Salesforce, which saves
+  // the lead and redirects the visitor to retURL (/thank-you/). Show a brief
+  // "Sending" state on the button while that round-trip happens.
   const btn=form.querySelector('button[type="submit"]');
   btn.disabled=true;
   btn.innerHTML='<i class="fas fa-circle-notch fa-spin"></i> Sending...';
   return true;
 }
+// Clear a custom validity message as soon as the visitor edits the field, so a
+// prior error can't block a corrected resubmit.
+document.querySelectorAll('form input[name="phone"], form input[name="email"]').forEach(function(el){
+  el.addEventListener('input',function(){el.setCustomValidity('')});
+});
 
 // BEFORE/AFTER SLIDERS
 document.querySelectorAll('[data-ba]').forEach(item=>{
