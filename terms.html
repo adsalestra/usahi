@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Terms of Service | USA Home Improvement</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="icon" type="image/webp" href="assets/logo.webp">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{
+--primary:#245b8f;
+--primary-dark:#1a4570;
+--accent:#e2474e;
+--accent-light:#e96b71;
+--dark:#0a0a0a;
+--gray:#6b7280;
+--light:#f8fafc;
+--white:#ffffff;
+}
+html{scroll-behavior:smooth}
+body{font-family:'Poppins',sans-serif;color:#1e293b;line-height:1.6;background:var(--white)}
+.container{max-width:1280px;margin:0 auto;padding:0 24px}
+
+/* TOP BAR */
+.top-bar{background:var(--primary);color:var(--white);padding:8px 0;font-size:13px;text-align:center;font-weight:500}
+.top-bar a{color:#fca5a8;text-decoration:none;font-weight:700}
+.top-bar a:hover{text-decoration:underline}
+
+/* NAVBAR */
+.navbar{position:sticky;top:0;z-index:1000;background:rgba(255,255,255,.97);backdrop-filter:blur(12px);box-shadow:0 1px 3px rgba(0,0,0,.06);padding:12px 0;transition:all .3s}
+.navbar.scrolled{box-shadow:0 4px 20px rgba(0,0,0,.1)}
+.nav-inner{display:flex;align-items:center;justify-content:space-between}
+.nav-logo img{height:48px;width:auto}
+.nav-cta{display:flex;align-items:center;gap:16px}
+.nav-phone{font-weight:800;font-size:18px;color:var(--primary);text-decoration:none;display:flex;align-items:center;gap:8px}
+.nav-phone i{color:var(--accent)}
+.btn{display:inline-flex;align-items:center;gap:10px;padding:16px 36px;border-radius:50px;font-size:16px;font-weight:700;cursor:pointer;transition:all .3s;border:none;text-decoration:none}
+.btn-primary{background:var(--accent);color:var(--white);box-shadow:0 4px 20px rgba(226,71,78,.3)}
+.btn-primary:hover{background:var(--accent-light);transform:translateY(-2px)}
+
+/* PAGE CONTENT */
+.page-header{background:var(--primary);color:var(--white);padding:60px 0 50px;text-align:center}
+.page-header h1{font-family:'Poppins',sans-serif;font-size:clamp(28px,4vw,44px);font-weight:800;margin-bottom:8px}
+.page-header p{font-size:16px;opacity:.7}
+.legal-content{max-width:800px;margin:0 auto;padding:60px 24px 80px}
+.legal-content h2{font-family:'Poppins',sans-serif;font-size:22px;font-weight:700;color:var(--dark);margin:40px 0 16px;padding-top:20px;border-top:1px solid #e5e7eb}
+.legal-content h2:first-of-type{border-top:none;margin-top:0;padding-top:0}
+.legal-content p{font-size:15px;color:#374151;margin-bottom:16px;line-height:1.8}
+.legal-content ul{margin:0 0 16px 24px;font-size:15px;color:#374151;line-height:1.8}
+.legal-content ul li{margin-bottom:8px}
+.legal-content a{color:var(--primary);text-decoration:none}
+.legal-content a:hover{text-decoration:underline}
+.legal-content .update-date{font-size:14px;color:var(--gray);margin-bottom:32px;font-style:italic}
+
+/* FOOTER */
+.footer{background:#0a0a0a;color:rgba(255,255,255,.6);padding:60px 0 24px}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px;margin-bottom:40px}
+.footer-brand img{height:40px;margin-bottom:16px}
+.footer-brand p{font-size:14px;line-height:1.7}
+.footer h5{color:var(--white);font-weight:700;font-size:14px;margin-bottom:16px;text-transform:uppercase;letter-spacing:1px}
+.footer ul{list-style:none}
+.footer ul li{margin-bottom:8px}
+.footer ul a{color:rgba(255,255,255,.6);text-decoration:none;font-size:14px;transition:color .2s}
+.footer ul a:hover{color:var(--accent)}
+.footer-social{display:flex;gap:12px;margin-top:16px}
+.footer-social a{width:40px;height:40px;border-radius:10px;background:rgba(255,255,255,.08);display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,.6);text-decoration:none;transition:all .2s}
+.footer-social a:hover{background:var(--accent);color:var(--white)}
+.footer-bottom{border-top:1px solid rgba(255,255,255,.08);padding-top:24px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;font-size:13px}
+.footer-links{display:flex;gap:20px}
+.footer-links a{color:rgba(255,255,255,.6);text-decoration:none;font-size:13px}
+.footer-links a:hover{color:var(--accent)}
+.footer-licenses{display:flex;gap:24px;flex-wrap:wrap}
+.footer-licenses span{display:flex;align-items:center;gap:6px}
+.footer-licenses i{color:var(--accent)}
+
+@media(max-width:768px){
+  .nav-phone{display:none}
+  .footer-grid{grid-template-columns:1fr}
+  .footer-bottom{flex-direction:column;text-align:center}
+}
+</style>
+</head>
+<body>
+
+<!-- TOP BAR -->
+<div class="top-bar">
+  <div class="container">
+    <i class="fas fa-shield-halved"></i> Hurricane Season Is Here — Protect Your Home Now! <a href="tel:8775546373">Call (877) 554-6373</a> for a FREE Estimate
+  </div>
+</div>
+
+<!-- NAVBAR -->
+<nav class="navbar" id="navbar">
+  <div class="container nav-inner">
+    <a href="index.html" class="nav-logo"><img src="assets/logo.webp" alt="USA Home Improvement"></a>
+    <div class="nav-cta">
+      <a href="tel:8775546373" class="nav-phone"><i class="fas fa-phone-volume"></i> (877) 554-6373</a>
+      <a href="index.html#get-quote" class="btn btn-primary" style="padding:12px 24px;font-size:14px">Free Estimate</a>
+    </div>
+  </div>
+</nav>
+
+<!-- PAGE HEADER -->
+<div class="page-header">
+  <div class="container">
+    <h1>Terms of Service</h1>
+    <p>Please read these terms carefully before using our services.</p>
+  </div>
+</div>
+
+<!-- CONTENT -->
+<div class="legal-content">
+  <p class="update-date">Last updated: July 17, 2026</p>
+
+  <h2>Agreement to Terms</h2>
+  <p>By accessing or using the website operated by USA Home Improvement LLC ("Company," "we," "us," or "our"), located at usahomeimprovement.com and its subdomains, you agree to be bound by these Terms of Service. If you do not agree to these terms, please do not use our website or services.</p>
+
+  <h2>Company Information</h2>
+  <p>USA Home Improvement LLC is a licensed Florida contractor specializing in impact windows, impact doors, roofing, HVAC, and related home improvement services.</p>
+  <ul>
+    <li>General Contractor License: CGC1526707</li>
+    <li>AC License: CAC1813665</li>
+    <li>Address: 580 Ansin Blvd, Hallandale Beach, FL 33009</li>
+    <li>Phone: (877) 554-6373</li>
+    <li>Email: info@gousahi.com</li>
+  </ul>
+
+  <h2>Services</h2>
+  <p>Our website provides information about our home improvement services, allows you to request free estimates, and provides educational content related to home protection and improvement in South Florida.</p>
+  <p>All estimates provided through our website are preliminary and subject to change after an in-person assessment. Final pricing, scope of work, and timelines will be outlined in a separate written contract before any work begins.</p>
+
+  <h2>Use of Website</h2>
+  <p>You agree to use this website only for lawful purposes. You may not:</p>
+  <ul>
+    <li>Use the website in any way that violates applicable local, state, or federal law</li>
+    <li>Submit false, inaccurate, or misleading information through any form on the website</li>
+    <li>Attempt to interfere with or disrupt the website's functionality</li>
+    <li>Use automated systems (bots, scrapers) to access the website without our written permission</li>
+    <li>Reproduce, distribute, or modify any content from this website without our prior consent</li>
+  </ul>
+
+  <h2>Form Submissions and Communications</h2>
+  <p>When you submit a form on our website requesting a free estimate or providing contact information, you consent to being contacted by USA Home Improvement via phone and/or email regarding your inquiry.</p>
+  <p>If you opt in to receive SMS/text messages by checking the SMS consent box, you agree to receive marketing text messages from USA Home Improvement at the number provided. Message and data rates may apply. You can opt out at any time by replying STOP.</p>
+  <p>If you opt in to receive marketing emails by checking the email consent box, you agree to receive marketing emails from USA Home Improvement. You can unsubscribe at any time using the link provided in each email.</p>
+
+  <h2>Intellectual Property</h2>
+  <p>All content on this website — including text, images, logos, videos, graphics, and design — is the property of USA Home Improvement LLC or its content partners and is protected by copyright and trademark laws. You may not use, copy, or distribute any content without our written permission.</p>
+
+  <h2>Third-Party Links</h2>
+  <p>Our website may contain links to third-party websites (including social media platforms, financing partners, and review sites). We are not responsible for the content, privacy practices, or terms of these external sites. Visiting these links is at your own discretion.</p>
+
+  <h2>Disclaimer of Warranties</h2>
+  <p>This website and its content are provided "as is" without warranties of any kind, either express or implied. While we strive to keep information accurate and up to date, we do not guarantee that all content is error-free or current.</p>
+  <p>Product and service information, including pricing, financing options, and availability, may change without notice. Please contact us directly for the most current information.</p>
+
+  <h2>Limitation of Liability</h2>
+  <p>USA Home Improvement LLC shall not be liable for any indirect, incidental, or consequential damages arising from your use of this website. Our liability is limited to the maximum extent permitted by Florida law.</p>
+
+  <h2>Governing Law</h2>
+  <p>These Terms of Service are governed by and construed in accordance with the laws of the State of Florida. Any disputes arising from these terms or your use of the website shall be resolved in the courts of Broward County, Florida.</p>
+
+  <h2>Changes to These Terms</h2>
+  <p>We may update these Terms of Service at any time. Changes will be posted on this page with an updated "Last updated" date. Your continued use of the website after changes are posted constitutes your acceptance of the revised terms.</p>
+
+  <h2>Contact Us</h2>
+  <p>If you have any questions about these Terms of Service, please contact us:</p>
+  <ul>
+    <li>Phone: <a href="tel:8775546373">(877) 554-6373</a></li>
+    <li>Email: <a href="mailto:info@gousahi.com">info@gousahi.com</a></li>
+    <li>Address: 580 Ansin Blvd, Hallandale Beach, FL 33009</li>
+  </ul>
+</div>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <img src="assets/logo.webp" alt="USA Home Improvement" style="filter:brightness(0) invert(1)">
+        <p>South Florida's most trusted home improvement company. Serving Miami-Dade, Broward, and Palm Beach counties for over 15 years.</p>
+        <div class="footer-social">
+          <a href="https://www.facebook.com/gousahi" target="_blank" rel="noopener" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="https://www.instagram.com/gousahi/" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="https://www.youtube.com/@USAHomeImprovementLLC" target="_blank" rel="noopener" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+          <a href="https://www.bbb.org/us/fl/hallandale/profile/windows/usa-home-improvement-llc-0633-90539009" target="_blank" rel="noopener" aria-label="BBB"><i class="fas fa-shield-halved"></i></a>
+        </div>
+      </div>
+      <div>
+        <h5>Services</h5>
+        <ul>
+          <li><a href="index.html">Impact Windows</a></li>
+          <li><a href="index.html">Impact Doors</a></li>
+          <li><a href="index.html">Roofing</a></li>
+          <li><a href="index.html">HVAC / AC</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Company</h5>
+        <ul>
+          <li><a href="https://usahomeimprovement.com" target="_blank" rel="noopener">Main Website</a></li>
+          <li><a href="index.html#projects">Our Projects</a></li>
+          <li><a href="index.html#reviews">Reviews</a></li>
+          <li><a href="index.html#get-quote">Free Estimate</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Contact</h5>
+        <ul>
+          <li><a href="tel:8775546373"><i class="fas fa-phone" style="margin-right:8px;color:var(--accent)"></i>(877) 554-6373</a></li>
+          <li><a href="mailto:info@gousahi.com"><i class="fas fa-envelope" style="margin-right:8px;color:var(--accent)"></i>info@gousahi.com</a></li>
+          <li><a href="https://maps.app.goo.gl/F7u7NuG1m4gHKw1eA" target="_blank" rel="noopener"><i class="fas fa-location-dot" style="margin-right:8px;color:var(--accent)"></i>580 Ansin Blvd, Hallandale Beach, FL 33009</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2025 USA Home Improvement LLC. All rights reserved.</span>
+      <div class="footer-links">
+        <a href="terms.html">Terms of Service</a>
+        <a href="privacy.html">Privacy Policy</a>
+      </div>
+      <div class="footer-licenses">
+        <span><i class="fas fa-id-card"></i> CGC1526707</span>
+        <span><i class="fas fa-id-card"></i> CAC1813665</span>
+        <span><i class="fas fa-shield-check"></i> Licensed & Insured</span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+window.addEventListener('scroll',()=>{
+  document.getElementById('navbar').classList.toggle('scrolled',window.scrollY>50);
+});
+</script>
+</body>
+</html>
