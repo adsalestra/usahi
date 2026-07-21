@@ -260,6 +260,30 @@ body{font-family:'Poppins',sans-serif;color:#1e293b;line-height:1.6;overflow-x:h
 .service-card-text h4{font-weight:800;font-size:18px;margin-bottom:8px;color:var(--white)}
 .service-card-text p{font-size:13px;color:rgba(255,255,255,.75);line-height:1.5}
 
+/* SPECIAL OFFERS */
+.offers-section{padding:80px 0;background:var(--light)}
+.offers-grid{display:grid;grid-template-columns:1fr 1fr;gap:28px;margin-top:44px}
+.offer-card{background:var(--white);border-radius:16px;overflow:hidden;box-shadow:var(--shadow);transition:all .35s;display:flex;flex-direction:column}
+.offer-card:hover{transform:translateY(-5px);box-shadow:var(--shadow-lg)}
+.offer-media{position:relative;aspect-ratio:16/9;overflow:hidden}
+.offer-media img{width:100%;height:100%;object-fit:cover;transition:transform .6s}
+.offer-card:hover .offer-media img{transform:scale(1.05)}
+.offer-media::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.45) 0%,rgba(0,0,0,.05) 42%,transparent 100%)}
+.offer-badge{position:absolute;top:16px;left:16px;z-index:2;display:inline-flex;align-items:center;gap:7px;background:rgba(255,255,255,.95);backdrop-filter:blur(8px);color:var(--primary);font-size:11px;font-weight:800;letter-spacing:1.1px;text-transform:uppercase;padding:8px 15px;border-radius:50px}
+.offer-badge i{color:var(--accent);font-size:12px}
+.offer-body{padding:26px 28px 26px;display:flex;flex-direction:column;flex:1}
+.offer-amount{font-family:'Poppins',sans-serif;font-size:clamp(40px,4.6vw,54px);font-weight:900;color:var(--accent);line-height:1;letter-spacing:-1.5px}
+.offer-kicker{font-size:17px;font-weight:800;color:var(--dark);margin-top:6px}
+.offer-title{font-size:14px;font-weight:700;color:var(--primary);letter-spacing:.4px;margin:14px 0 8px;text-transform:uppercase}
+.offer-desc{font-size:14.5px;color:var(--gray);line-height:1.65;margin-bottom:18px}
+.offer-list{list-style:none;display:grid;gap:11px;margin-bottom:24px}
+.offer-list li{display:flex;align-items:flex-start;gap:10px;font-size:14px;font-weight:500;color:#374151}
+.offer-list li i{color:var(--primary);font-size:14px;margin-top:3px;flex-shrink:0}
+.offer-cta{margin-top:auto}
+.offer-cta .btn{width:100%;justify-content:center}
+.offer-fine{font-size:11px;color:#9ca3af;line-height:1.5;margin-top:12px;text-align:center}
+@media(max-width:900px){.offers-grid{grid-template-columns:1fr;gap:24px}}
+
 /* TESTING VIDEOS */
 .testing-section{padding:80px 0;background:var(--white)}
 .testing-grid{display:grid;grid-template-columns:1fr 1fr;gap:32px;margin-top:48px}
@@ -483,6 +507,62 @@ body{font-family:'Poppins',sans-serif;color:#1e293b;line-height:1.6;overflow-x:h
     </div>
   </div>
 </div>
+
+<!-- SPECIAL OFFERS -->
+<section class="offers-section" id="offers">
+  <div class="container">
+    <div class="reveal" style="text-align:center">
+      <span class="section-label">Current Offers</span>
+      <h2 class="section-title">Two Ways to Save on Hurricane Protection</h2>
+      <p class="section-subtitle" style="margin:0 auto">Financing and Florida state grant funding available right now for qualifying homeowners.</p>
+    </div>
+    <div class="offers-grid">
+
+      <div class="offer-card reveal">
+        <div class="offer-media">
+          <span class="offer-badge"><i class="fas fa-bolt"></i> Limited Time</span>
+          <img src="assets/homes/22A.jpg" alt="Luxury living space with impact windows overlooking the water">
+        </div>
+        <div class="offer-body">
+          <div class="offer-amount">$0</div>
+          <div class="offer-kicker">out of pocket until 2027</div>
+          <h3 class="offer-title">Premium Impact Windows</h3>
+          <p class="offer-desc">Get your impact windows installed now and start paying later, with 100% financing through our accredited lending partners.</p>
+          <ul class="offer-list">
+            <li><i class="fas fa-check"></i> No money down &amp; no payments until 2027</li>
+            <li><i class="fas fa-check"></i> From $5/month per window installed</li>
+          </ul>
+          <div class="offer-cta">
+            <a href="#get-quote" class="btn btn-primary"><i class="fas fa-tag"></i> Claim My Offer</a>
+            <p class="offer-fine">Subject to credit approval through our lending partners.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="offer-card reveal">
+        <div class="offer-media">
+          <span class="offer-badge"><i class="fas fa-shield-halved"></i> State of Florida Program</span>
+          <img src="assets/homes/5A.jpg" alt="South Florida home protected with impact windows and doors">
+        </div>
+        <div class="offer-body">
+          <div class="offer-amount">$10,000</div>
+          <div class="offer-kicker">in state grant funding</div>
+          <h3 class="offer-title">My Safe Florida Home Program</h3>
+          <p class="offer-desc">State grant money toward hurricane protection for your home &mdash; and we handle the paperwork from start to finish.</p>
+          <ul class="offer-list">
+            <li><i class="fas fa-check"></i> Free wind mitigation inspection</li>
+            <li><i class="fas fa-check"></i> Covers impact windows &amp; doors</li>
+          </ul>
+          <div class="offer-cta">
+            <a href="#get-quote" class="btn btn-primary"><i class="fas fa-house-chimney-window"></i> Check My Eligibility</a>
+            <p class="offer-fine">Subject to eligibility and available program funding.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
 
 <!-- QUOTE FORM -->
 <section class="inline-form-section" id="get-quote">
