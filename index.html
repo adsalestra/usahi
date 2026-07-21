@@ -282,73 +282,72 @@ body{font-family:'Poppins',sans-serif;color:#1e293b;line-height:1.6;overflow-x:h
 .hero-offer i{color:var(--accent);font-size:14px}
 .hero-offer strong{color:var(--dark);font-weight:800}
 
-/* OFFER POPUP */
-.offer-modal{position:fixed;inset:0;z-index:4000;display:none;align-items:center;justify-content:center;padding:14px;background:rgba(10,10,10,.7);backdrop-filter:blur(5px)}
+/* OFFER POPUP — desktop: image cards | mobile: bottom sheet, single CTA */
+.offer-modal{position:fixed;inset:0;z-index:4000;display:none;align-items:center;justify-content:center;padding:14px;background:rgba(10,10,10,.72);backdrop-filter:blur(5px)}
 .offer-modal.open{display:flex}
-.offer-modal-box{position:relative;width:100%;max-width:860px;max-height:94dvh;background:var(--white);border-radius:18px;overflow:hidden;display:flex;flex-direction:column;box-shadow:0 30px 90px rgba(0,0,0,.45)}
+.offer-modal-box{position:relative;width:100%;max-width:760px;max-height:94dvh;background:var(--white);border-radius:18px;overflow:hidden;display:flex;flex-direction:column;box-shadow:0 30px 90px rgba(0,0,0,.45)}
 .offer-modal-scroll{flex:1;min-height:0;overflow-y:auto}
-.offer-modal-close{position:absolute;top:10px;right:10px;z-index:6;width:34px;height:34px;border-radius:50%;background:rgba(255,255,255,.92);border:none;cursor:pointer;color:var(--dark);font-size:15px;display:flex;align-items:center;justify-content:center;transition:all .25s}
+.offer-modal-close{position:absolute;top:12px;right:12px;z-index:7;width:34px;height:34px;border-radius:50%;background:rgba(255,255,255,.92);border:none;cursor:pointer;color:var(--dark);font-size:14px;display:flex;align-items:center;justify-content:center;transition:all .25s}
 .offer-modal-close:hover{background:#fff;transform:rotate(90deg)}
-.offer-modal-head{padding:22px 24px 12px;text-align:center}
-.offer-modal-head h3{font-family:'Poppins',sans-serif;font-size:clamp(18px,2.4vw,26px);font-weight:900;color:var(--dark);line-height:1.2}
-.offer-modal-head p{font-size:13.5px;color:var(--gray);margin-top:5px}
-.offer-modal-grid{display:grid;grid-template-columns:1fr 1fr;gap:13px;padding:0 20px 14px}
-.offer-tile{position:relative;border-radius:14px;overflow:hidden;display:flex;flex-direction:column;justify-content:flex-end;padding:16px;color:#fff;min-height:196px}
-.offer-tile img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
-.offer-tile::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.12) 0%,rgba(0,0,0,.55) 45%,rgba(0,0,0,.88) 100%)}
-.offer-tile>*{position:relative;z-index:2}
-.offer-tile-badge{position:absolute;top:13px;left:13px;z-index:3;background:rgba(255,255,255,.94);color:var(--primary);font-size:10px;font-weight:800;letter-spacing:1px;text-transform:uppercase;padding:6px 12px;border-radius:50px}
-.offer-tile-amount{font-family:'Poppins',sans-serif;font-size:clamp(23px,3.2vw,34px);font-weight:900;line-height:1;letter-spacing:-.5px;color:#fff}
-.offer-tile-kicker{font-size:13px;font-weight:700;margin-top:4px;opacity:.95}
-.offer-tile-desc{font-size:12px;line-height:1.45;opacity:.82;margin-top:6px}
-.offer-tile .btn{margin-top:12px;width:100%;justify-content:center;padding:11px 18px;font-size:13.5px}
-.offer-modal-foot{padding:0 24px 16px;text-align:center;font-size:10px;color:#9ca3af;line-height:1.5}
-@media(max-width:720px){
-  .offer-modal-grid{grid-template-columns:1fr;gap:10px;padding:0 14px 12px}
-  .offer-modal-head{padding:18px 18px 9px}
-  .offer-tile{min-height:148px;padding:14px}
-  .offer-tile-desc{display:none}
-}
-@media(max-height:780px){
-  .offer-modal-head{padding:16px 20px 8px}
+.offer-modal-head{padding:24px 54px 14px;text-align:center}
+.offer-modal-head h3{font-family:'Poppins',sans-serif;font-size:clamp(18px,2.3vw,24px);font-weight:900;color:var(--dark);line-height:1.25}
+.offer-modal-head p{font-size:13.5px;color:var(--gray);margin-top:6px}
+.offer-modal-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;padding:0 22px 16px}
+.offer-tile{background:var(--white);border:1px solid #e6ebf1;border-radius:14px;overflow:hidden;display:flex;flex-direction:column}
+.offer-tile-media{position:relative;height:152px;overflow:hidden;flex-shrink:0}
+.offer-tile-media img{width:100%;height:100%;object-fit:cover;display:block}
+.offer-tile-badge{position:absolute;top:12px;left:12px;background:rgba(255,255,255,.96);color:var(--accent);font-size:10px;font-weight:800;letter-spacing:1px;text-transform:uppercase;padding:6px 12px;border-radius:50px}
+.offer-tile.is-grant .offer-tile-badge{color:var(--primary)}
+.offer-tile-body{padding:16px 18px 18px;display:flex;flex-direction:column;flex:1}
+.offer-tile-amount{font-family:'Poppins',sans-serif;font-size:clamp(23px,2.7vw,30px);font-weight:900;color:var(--accent);line-height:1;letter-spacing:-.5px}
+.offer-tile-kicker{font-size:13px;font-weight:800;color:var(--dark);margin-top:6px;line-height:1.35}
+.offer-tile-desc{font-size:12.5px;color:var(--gray);line-height:1.5;margin-top:7px}
+.offer-tile-cta{margin-top:16px;width:100%;justify-content:center;padding:11px 16px;font-size:13.5px}
+.offer-modal-action{display:none}
+.offer-modal-foot{padding:0 24px 18px;text-align:center;font-size:10px;color:#9ca3af;line-height:1.5}
+@media(max-height:760px){
+  .offer-modal-head{padding:18px 52px 10px}
   .offer-modal-head p{display:none}
-  .offer-tile{min-height:168px}
   .offer-tile-desc{display:none}
+  .offer-tile-media{height:124px}
 }
-@media(max-height:640px){
-  .offer-tile{min-height:126px;padding:12px}
-  .offer-tile-amount{font-size:20px}
-  .offer-tile-kicker{font-size:11.5px}
-  .offer-tile-badge{font-size:9px;padding:5px 10px}
-  .offer-tile .btn{margin-top:8px;padding:9px 14px;font-size:12.5px}
-  .offer-modal-head{padding:13px 18px 7px}
-  .offer-modal-head h3{font-size:16px}
-  .offer-modal-foot{padding:0 18px 11px;font-size:9px}
+@media(max-height:620px){
+  .offer-tile-media{display:none}
+  .offer-tile-amount{font-size:23px}
 }
-
-/* SPECIAL OFFERS */
-.offers-section{padding:80px 0;background:var(--light)}
-.offers-grid{display:grid;grid-template-columns:1fr 1fr;gap:28px;margin-top:44px}
-.offer-card{background:var(--white);border-radius:16px;overflow:hidden;box-shadow:var(--shadow);transition:all .35s;display:flex;flex-direction:column}
-.offer-card:hover{transform:translateY(-5px);box-shadow:var(--shadow-lg)}
-.offer-media{position:relative;aspect-ratio:16/9;overflow:hidden}
-.offer-media img{width:100%;height:100%;object-fit:cover;transition:transform .6s}
-.offer-card:hover .offer-media img{transform:scale(1.05)}
-.offer-media::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.45) 0%,rgba(0,0,0,.05) 42%,transparent 100%)}
-.offer-badge{position:absolute;top:16px;left:16px;z-index:2;display:inline-flex;align-items:center;gap:7px;background:rgba(255,255,255,.95);backdrop-filter:blur(8px);color:var(--primary);font-size:11px;font-weight:800;letter-spacing:1.1px;text-transform:uppercase;padding:8px 15px;border-radius:50px}
-.offer-badge i{color:var(--accent);font-size:12px}
-.offer-body{padding:26px 28px 26px;display:flex;flex-direction:column;flex:1}
-.offer-amount{font-family:'Poppins',sans-serif;font-size:clamp(40px,4.6vw,54px);font-weight:900;color:var(--accent);line-height:1;letter-spacing:-1.5px}
-.offer-kicker{font-size:17px;font-weight:800;color:var(--dark);margin-top:6px}
-.offer-title{font-size:14px;font-weight:700;color:var(--primary);letter-spacing:.4px;margin:14px 0 8px;text-transform:uppercase}
-.offer-desc{font-size:14.5px;color:var(--gray);line-height:1.65;margin-bottom:18px}
-.offer-list{list-style:none;display:grid;gap:11px;margin-bottom:24px}
-.offer-list li{display:flex;align-items:flex-start;gap:10px;font-size:14px;font-weight:500;color:#374151}
-.offer-list li i{color:var(--primary);font-size:14px;margin-top:3px;flex-shrink:0}
-.offer-cta{margin-top:auto}
-.offer-cta .btn{width:100%;justify-content:center}
-.offer-fine{font-size:11px;color:#9ca3af;line-height:1.5;margin-top:12px;text-align:center}
-@media(max-width:900px){.offers-grid{grid-template-columns:1fr;gap:24px}}
+/* --- MOBILE: draggable bottom sheet with collapsed peek, 1 image, single CTA --- */
+.offer-sheet-grip{display:none}
+.offer-sheet-media{display:none}
+@media(max-width:720px){
+  .offer-modal{align-items:flex-end;justify-content:center;padding:0;transition:background .32s}
+  .offer-modal-box{max-width:100%;max-height:80dvh;border-radius:20px 20px 0 0;transform:translateY(100%);transition:transform .42s cubic-bezier(.32,.72,0,1)}
+  .offer-modal.open .offer-modal-box{transform:translateY(0)}
+  .offer-modal.peek{background:transparent;backdrop-filter:none;pointer-events:none;display:flex}
+  .offer-modal.peek .offer-modal-box{transform:translateY(calc(100% - 58px));pointer-events:auto;box-shadow:0 -6px 26px rgba(0,0,0,.18)}
+  .offer-modal.peek .grip-chev{transform:rotate(180deg)}
+  .offer-modal-close{display:none}
+  .offer-modal-box::before{display:none}
+  .offer-sheet-grip{display:flex;align-items:center;width:100%;height:58px;padding:14px 18px 0;background:var(--white);border:none;border-bottom:1px solid #eef2f6;cursor:pointer;position:relative;flex-shrink:0;text-align:left}
+  .grip-line{position:absolute;top:8px;left:50%;transform:translateX(-50%);width:40px;height:4px;border-radius:4px;background:#d7dde5}
+  .grip-text{font-size:13.5px;font-weight:800;color:var(--dark);display:flex;align-items:center;gap:8px}
+  .grip-text i{color:var(--accent);font-size:13px}
+  .grip-chev{margin-left:auto;color:var(--gray);font-size:13px;transition:transform .3s}
+  .offer-sheet-media{display:block;height:122px;overflow:hidden;flex-shrink:0}
+  .offer-sheet-media img{width:100%;height:100%;object-fit:cover;display:block}
+  .offer-modal-head{padding:15px 20px 4px;text-align:left}
+  .offer-modal-head h3{font-size:18px;line-height:1.3}
+  .offer-modal-head p{display:none}
+  .offer-modal-grid{grid-template-columns:1fr;gap:0;padding:4px 20px 0}
+  .offer-tile{border:none;border-radius:0;border-top:1px solid #eef2f6;background:transparent;overflow:visible}
+  .offer-tile:first-child{border-top:none}
+  .offer-tile-media,.offer-tile-badge,.offer-tile-desc,.offer-tile-cta{display:none}
+  .offer-tile-body{flex-direction:row;align-items:center;gap:14px;padding:13px 0}
+  .offer-tile-amount{font-size:20px;flex-shrink:0;width:132px;white-space:nowrap}
+  .offer-tile-kicker{font-size:12.5px;font-weight:700;margin-top:0;color:#374151;line-height:1.4}
+  .offer-modal-action{display:block;padding:14px 20px 0}
+  .offer-modal-action .btn{width:100%;justify-content:center;padding:16px;font-size:15px;min-height:48px}
+  .offer-modal-foot{padding:11px 20px 18px;font-size:9.5px;text-align:left}
+}
 
 /* TESTING VIDEOS */
 .testing-section{padding:80px 0;background:var(--white)}
@@ -463,6 +462,11 @@ body{font-family:'Poppins',sans-serif;color:#1e293b;line-height:1.6;overflow-x:h
 @media(max-width:768px){
   .nav-links{display:none}
   .mobile-toggle{display:block}
+  .nav-cta .btn{display:none}
+  .nav-cta{gap:10px}
+  .nav-phone{font-size:15px;white-space:nowrap;gap:6px}
+  .nav-logo img{height:38px}
+  .top-bar{font-size:11.5px;padding:7px 0}
   .ba-grid{grid-template-columns:1fr}
   .project-grid{grid-template-columns:1fr 1fr}
   .footer-grid{grid-template-columns:1fr}
@@ -476,6 +480,9 @@ body{font-family:'Poppins',sans-serif;color:#1e293b;line-height:1.6;overflow-x:h
 @media(max-width:480px){
   .project-grid{grid-template-columns:1fr}
   .ig-grid{grid-template-columns:1fr}
+  .nav-phone{font-size:14px}
+  .nav-logo img{height:34px}
+  .top-bar{font-size:11px}
 }
 </style>
 </head>
@@ -526,8 +533,8 @@ body{font-family:'Poppins',sans-serif;color:#1e293b;line-height:1.6;overflow-x:h
           <a href="tel:9544662911" class="btn btn-outline-dark"><i class="fas fa-phone"></i> Call (954) 466-2911</a>
         </div>
         <div class="hero-offers">
-          <a href="#offers" class="hero-offer"><i class="fas fa-bolt"></i><span><strong>75% Off</strong> Installation</span></a>
-          <a href="#offers" class="hero-offer"><i class="fas fa-shield-halved"></i><span><strong>Up to $10,000</strong> State Grant</span></a>
+          <a href="#get-quote" class="hero-offer" onclick="return window.openOfferModal ? openOfferModal(event) : true"><i class="fas fa-bolt"></i><span><strong>75% Off</strong> Installation</span></a>
+          <a href="#get-quote" class="hero-offer" onclick="return window.openOfferModal ? openOfferModal(event) : true"><i class="fas fa-shield-halved"></i><span><strong>Up to $10,000</strong> State Grant</span></a>
         </div>
         <div class="hero-stats">
           <div class="hero-stat">
@@ -577,62 +584,6 @@ body{font-family:'Poppins',sans-serif;color:#1e293b;line-height:1.6;overflow-x:h
     </div>
   </div>
 </div>
-
-<!-- SPECIAL OFFERS -->
-<section class="offers-section" id="offers">
-  <div class="container">
-    <div class="reveal" style="text-align:center">
-      <span class="section-label">Current Offers</span>
-      <h2 class="section-title">Two Ways to Save on Hurricane Protection</h2>
-      <p class="section-subtitle" style="margin:0 auto">Financing and Florida state grant funding available right now for qualifying homeowners.</p>
-    </div>
-    <div class="offers-grid">
-
-      <div class="offer-card reveal">
-        <div class="offer-media">
-          <span class="offer-badge"><i class="fas fa-bolt"></i> Limited Time</span>
-          <img src="assets/homes/22A.jpg" alt="Luxury living space with impact windows overlooking the water">
-        </div>
-        <div class="offer-body">
-          <div class="offer-amount">75% Off</div>
-          <div class="offer-kicker">your installation</div>
-          <h3 class="offer-title">Hurricane Windows &amp; Doors</h3>
-          <p class="offer-desc">Save 75% on installation when you upgrade to hurricane-rated impact windows and doors this season.</p>
-          <ul class="offer-list">
-            <li><i class="fas fa-check"></i> Applies to full window &amp; door installations</li>
-            <li><i class="fas fa-check"></i> Combines with $0 down, 100% financing</li>
-          </ul>
-          <div class="offer-cta">
-            <a href="#get-quote" class="btn btn-primary"><i class="fas fa-tag"></i> Claim My Offer</a>
-            <p class="offer-fine">Discount applies to installation. Limited time offer; restrictions apply.</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="offer-card reveal">
-        <div class="offer-media">
-          <span class="offer-badge"><i class="fas fa-shield-halved"></i> State of Florida Program</span>
-          <img src="assets/homes/5A.jpg" alt="South Florida home protected with impact windows and doors">
-        </div>
-        <div class="offer-body">
-          <div class="offer-amount">$10,000</div>
-          <div class="offer-kicker">in state grant funding</div>
-          <h3 class="offer-title">My Safe Florida Home Program</h3>
-          <p class="offer-desc">State grant money toward hurricane protection for your home &mdash; and we handle the paperwork from start to finish.</p>
-          <ul class="offer-list">
-            <li><i class="fas fa-check"></i> Free wind mitigation inspection</li>
-            <li><i class="fas fa-check"></i> Covers impact windows &amp; doors</li>
-          </ul>
-          <div class="offer-cta">
-            <a href="#get-quote" class="btn btn-primary"><i class="fas fa-house-chimney-window"></i> Check My Eligibility</a>
-            <p class="offer-fine">Subject to eligibility and available program funding.</p>
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
 
 <!-- QUOTE FORM -->
 <section class="inline-form-section" id="get-quote">
@@ -1360,42 +1311,74 @@ document.querySelectorAll('form input[name="phone"], form input[name="email"]').
   el.addEventListener('input',function(){el.setCustomValidity('')});
 });
 
-// OFFER POPUP — exit-intent on desktop, timed on touch; once per session
-(function(){
+// OFFER POPUP — desktop modal | mobile bottom sheet that collapses to a peek strip.
+// Deferred to DOMContentLoaded because the modal markup sits below this script.
+document.addEventListener('DOMContentLoaded',function(){
   var modal=document.getElementById('offerModal');
   if(!modal) return;
+  var box=modal.querySelector('.offer-modal-box');
   var KEY='usahi_offers_seen', shown=false;
+  function isMobile(){return window.matchMedia('(max-width:720px)').matches;}
   function seen(){try{return sessionStorage.getItem(KEY)==='1'}catch(e){return false}}
   function markSeen(){try{sessionStorage.setItem(KEY,'1')}catch(e){}}
-  function openModal(){
-    if(shown||seen()) return;
-    shown=true;
+
+  function expand(){
+    modal.classList.remove('peek');
     modal.classList.add('open');
     document.body.style.overflow='hidden';
-    var btn=modal.querySelector('.offer-modal-close');
-    if(btn) btn.focus();
   }
-  function closeModal(){
-    modal.classList.remove('open');
+  // On mobile we never fully dismiss: the sheet drops to a peek strip the
+  // visitor can pull back up. On desktop it closes outright.
+  function collapse(){
     document.body.style.overflow='';
     markSeen();
+    modal.classList.remove('open');
+    if(isMobile()) modal.classList.add('peek');
+    else modal.classList.remove('peek');
   }
-  window.closeOfferModal=closeModal;
+  function openModal(force){
+    if(!force && (shown||seen())){
+      if(isMobile() && !modal.classList.contains('open')) modal.classList.add('peek');
+      return;
+    }
+    shown=true;
+    expand();
+  }
+  window.closeOfferModal=collapse;
+  window.toggleOfferSheet=function(){
+    modal.classList.contains('open') ? collapse() : expand();
+  };
+  // hero chips (and any manual trigger) always reopen it, even once dismissed
+  window.openOfferModal=function(e){
+    if(e && e.preventDefault) e.preventDefault();
+    expand();
+    return false;
+  };
   // desktop: fire when the cursor leaves toward the browser chrome
   document.addEventListener('mouseout',function(e){
     if(!e.relatedTarget && e.clientY<=0) openModal();
   });
-  // touch/fallback: show after a while, once they've had a chance to read
-  setTimeout(openModal,18000);
-  // dismiss: backdrop click, Escape, or acting on an offer
-  modal.addEventListener('click',function(e){ if(e.target===modal) closeModal(); });
+  // touch/fallback: show after a short read, once per session
+  setTimeout(function(){openModal()},7000);
+  // ?offers=1 forces it open — handy for previewing
+  if(/[?&]offers=1/.test(location.search)) setTimeout(function(){openModal(true)},300);
+  // dismiss: backdrop tap, Escape, or acting on an offer
+  modal.addEventListener('click',function(e){ if(e.target===modal) collapse(); });
   document.addEventListener('keydown',function(e){
-    if(e.key==='Escape'&&modal.classList.contains('open')) closeModal();
+    if(e.key==='Escape'&&modal.classList.contains('open')) collapse();
   });
   modal.querySelectorAll('a[href="#get-quote"]').forEach(function(a){
-    a.addEventListener('click',closeModal);
+    a.addEventListener('click',collapse);
   });
-})();
+  // swipe the sheet down to collapse it
+  var startY=null;
+  box.addEventListener('touchstart',function(e){ startY=e.touches[0].clientY; },{passive:true});
+  box.addEventListener('touchmove',function(e){
+    if(startY===null||!modal.classList.contains('open')) return;
+    if(e.touches[0].clientY-startY>55){ collapse(); startY=null; }
+  },{passive:true});
+  box.addEventListener('touchend',function(){ startY=null; },{passive:true});
+});
 
 // BEFORE/AFTER SLIDERS
 document.querySelectorAll('[data-ba]').forEach(item=>{
@@ -1487,29 +1470,46 @@ document.head.appendChild(mobileStyle);
 <!-- OFFER POPUP -->
 <div class="offer-modal" id="offerModal" role="dialog" aria-modal="true" aria-labelledby="offerModalTitle">
   <div class="offer-modal-box">
+    <button class="offer-sheet-grip" onclick="toggleOfferSheet()" aria-label="Show or hide offers">
+      <span class="grip-line"></span>
+      <span class="grip-text"><i class="fas fa-tag"></i> 2 special offers</span>
+      <i class="fas fa-chevron-down grip-chev"></i>
+    </button>
     <button class="offer-modal-close" onclick="closeOfferModal()" aria-label="Close offers"><i class="fas fa-times"></i></button>
     <div class="offer-modal-scroll">
+      <div class="offer-sheet-media"><img src="assets/homes/5A.jpg" alt=""></div>
       <div class="offer-modal-head">
         <h3 id="offerModalTitle">Two Ways to Save on Hurricane Protection</h3>
         <p>Claim either offer with your free, no-obligation estimate.</p>
       </div>
       <div class="offer-modal-grid">
         <div class="offer-tile">
-          <img src="assets/homes/22A.jpg" alt="">
-          <span class="offer-tile-badge">Limited Time</span>
-          <div class="offer-tile-amount">75% Off</div>
-          <div class="offer-tile-kicker">Hurricane windows &amp; doors installation</div>
-          <p class="offer-tile-desc">Save 75% on installation when you upgrade this season.</p>
-          <a href="#get-quote" class="btn btn-primary">Claim My Offer</a>
+          <div class="offer-tile-media">
+            <img src="assets/homes/22A.jpg" alt="">
+            <span class="offer-tile-badge">Limited Time</span>
+          </div>
+          <div class="offer-tile-body">
+            <div class="offer-tile-amount">75% Off</div>
+            <div class="offer-tile-kicker">Hurricane windows &amp; doors installation</div>
+            <p class="offer-tile-desc">Save 75% on installation when you upgrade this season.</p>
+            <a href="#get-quote" class="btn btn-primary offer-tile-cta">Claim My Offer</a>
+          </div>
         </div>
-        <div class="offer-tile">
-          <img src="assets/homes/5A.jpg" alt="">
-          <span class="offer-tile-badge">State of Florida</span>
-          <div class="offer-tile-amount">Up to $10,000</div>
-          <div class="offer-tile-kicker">My Safe Florida Home grant</div>
-          <p class="offer-tile-desc">State grant funding toward hurricane protection for your home.</p>
-          <a href="#get-quote" class="btn btn-primary">Check My Eligibility</a>
+        <div class="offer-tile is-grant">
+          <div class="offer-tile-media">
+            <img src="assets/homes/5A.jpg" alt="">
+            <span class="offer-tile-badge">State of Florida</span>
+          </div>
+          <div class="offer-tile-body">
+            <div class="offer-tile-amount">Up to $10,000</div>
+            <div class="offer-tile-kicker">My Safe Florida Home grant</div>
+            <p class="offer-tile-desc">State grant funding toward hurricane protection for your home.</p>
+            <a href="#get-quote" class="btn btn-primary offer-tile-cta">Check My Eligibility</a>
+          </div>
         </div>
+      </div>
+      <div class="offer-modal-action">
+        <a href="#get-quote" class="btn btn-primary">Get My Free Estimate</a>
       </div>
       <p class="offer-modal-foot">Discount applies to installation; restrictions apply. Grant subject to eligibility and available program funding.</p>
     </div>
