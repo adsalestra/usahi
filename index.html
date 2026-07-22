@@ -446,7 +446,7 @@ body{font-family:'Poppins',sans-serif;color:#1e293b;line-height:1.6;overflow-x:h
 .footer-licenses i{color:var(--accent)}
 
 /* FLOATING FORM */
-.floating-form{position:fixed;right:-420px;top:50%;transform:translateY(-50%);z-index:999;width:380px;background:var(--white);border-radius:16px 0 0 16px;box-shadow:-8px 0 40px rgba(0,0,0,.15);transition:right .4s;padding:32px}
+.floating-form{position:fixed;right:-420px;top:50%;transform:translateY(-50%);z-index:1200;width:380px;max-height:92dvh;overflow-y:auto;background:var(--white);border-radius:16px 0 0 16px;box-shadow:-8px 0 40px rgba(0,0,0,.15);transition:right .4s;padding:32px}
 .floating-form.open{right:0}
 .form-tab{position:absolute;left:-48px;top:50%;transform:translateY(-50%);background:var(--accent);color:var(--white);padding:16px 12px;border-radius:12px 0 0 12px;cursor:pointer;writing-mode:vertical-rl;font-weight:800;font-size:13px;letter-spacing:1px}
 .floating-form h3{font-family:'Poppins',sans-serif;font-size:22px;font-weight:800;margin-bottom:4px}
@@ -474,7 +474,10 @@ body{font-family:'Poppins',sans-serif;color:#1e293b;line-height:1.6;overflow-x:h
   .ba-grid{grid-template-columns:1fr}
   .project-grid{grid-template-columns:1fr 1fr}
   .footer-grid{grid-template-columns:1fr}
-  .floating-form{width:100%;right:-100%;border-radius:16px 0 0 16px}
+  .floating-form{width:100%;right:-100%;top:0;transform:none;height:100dvh;max-height:100dvh;border-radius:0;padding:56px 20px 32px;overflow-y:auto}
+  .floating-form.open .form-close{position:fixed;top:12px;right:12px;z-index:1300;width:36px;height:36px;border-radius:50%;background:#f1f5f9;color:var(--dark);display:flex;align-items:center;justify-content:center;font-size:18px}
+  /* the offer peek strip must not sit over the quote form's submit button */
+  body.quote-open .offer-modal.peek{display:none}
   .lightbox-nav.prev{left:8px}
   .lightbox-nav.next{right:8px}
   .ig-grid{grid-template-columns:1fr 1fr 1fr}
@@ -1277,7 +1280,8 @@ window.addEventListener('scroll',()=>{
 
 // FLOATING FORM
 function toggleFloatingForm(){
-  document.getElementById('floatingForm').classList.toggle('open');
+  var f=document.getElementById('floatingForm');
+  document.body.classList.toggle('quote-open', f.classList.toggle('open'));
 }
 
 // FORM SUBMIT
@@ -1384,6 +1388,8 @@ document.addEventListener('DOMContentLoaded',function(){
     else modal.classList.remove('peek');
   }
   function openModal(force){
+    // never auto-cover the quote form while someone is filling it in
+    if(!force && document.body.classList.contains('quote-open')) return;
     if(!force && (shown||seen())){
       if(isMobile() && !modal.classList.contains('open')) modal.classList.add('peek');
       return;
