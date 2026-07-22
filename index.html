@@ -221,6 +221,12 @@ body{font-family:'Poppins',sans-serif;color:#1e293b;line-height:1.6;overflow-x:h
 .yt-crop-fill iframe{width:calc(100% + 20px);height:calc(100% + 120px);border:none;position:absolute;top:-60px;left:-10px}
 .yt-crop-fill+.sound-toggle,.yt-crop-fill+.sound-toggle+.video-pause-btn,.yt-crop-fill~.sound-toggle,.yt-crop-fill~.video-pause-btn{pointer-events:auto;z-index:20}
 .team-video-overlay{position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(36,91,143,.9));padding:40px;color:var(--white)}
+@media(max-width:768px){
+  .team-video-wrap{aspect-ratio:4/3}
+  .team-video-overlay{padding:20px}
+  .team-video-overlay h3{font-size:20px;margin-bottom:4px}
+  .team-video-overlay p{font-size:13px;line-height:1.5}
+}
 .team-video-overlay h3{font-family:'Poppins',sans-serif;font-size:28px;margin-bottom:8px}
 .team-video-overlay p{opacity:.85;font-size:15px}
 .team-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:24px;margin-top:32px}
@@ -387,6 +393,19 @@ body{font-family:'Poppins',sans-serif;color:#1e293b;line-height:1.6;overflow-x:h
 .financing-logos{display:flex;justify-content:center;gap:40px;margin-top:48px;flex-wrap:wrap;align-items:center}
 .financing-logos img{height:36px;width:auto;opacity:.5;filter:grayscale(100%);transition:all .3s}
 .financing-logos img:hover{opacity:1;filter:none}
+
+/* SCROLLER ARROWS */
+.scroller{position:relative}
+.scroll-arrow{position:absolute;top:50%;transform:translateY(-50%);z-index:5;width:44px;height:44px;border-radius:50%;background:var(--white);border:1px solid #e2e8f0;box-shadow:0 4px 16px rgba(0,0,0,.12);color:var(--primary);font-size:15px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .25s}
+.scroll-arrow:hover{background:var(--primary);color:var(--white);border-color:var(--primary)}
+.scroll-arrow.prev{left:-6px}
+.scroll-arrow.next{right:-6px}
+.scroll-arrow[disabled]{opacity:0;pointer-events:none}
+@media(max-width:768px){
+  .scroll-arrow{width:38px;height:38px;font-size:13px}
+  .scroll-arrow.prev{left:-2px}
+  .scroll-arrow.next{right:-2px}
+}
 
 /* MAP + REVIEWS */
 .map-section{padding:80px 0;background:var(--light)}
@@ -966,6 +985,7 @@ body{font-family:'Poppins',sans-serif;color:#1e293b;line-height:1.6;overflow-x:h
       <h2 class="section-title">What Our Customers Say</h2>
       <p class="section-subtitle" style="margin:0 auto">500+ five-star reviews from homeowners across South Florida.</p>
     </div>
+    <div class="scroller">
     <div class="testimonial-scroll" style="margin-top:40px">
       <div class="testimonial-card">
         <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
@@ -993,6 +1013,10 @@ body{font-family:'Poppins',sans-serif;color:#1e293b;line-height:1.6;overflow-x:h
         <div class="author-info"><div class="name">Robert & Anne G.</div><div class="location">Fort Lauderdale</div></div>
       </div>
     </div>
+      <button class="scroll-arrow prev" aria-label="Previous reviews"><i class="fas fa-chevron-left"></i></button>
+      <button class="scroll-arrow next" aria-label="Next reviews"><i class="fas fa-chevron-right"></i></button>
+    </div>
+    <div class="scroller">
     <div class="testimonial-photos-grid">
       <img src="assets/testimonials/PHOTO-2025-07-08-14-18-17.jpg" alt="Happy customer" onclick="openLightbox('testimonials',0)">
       <img src="assets/testimonials/PHOTO-2025-06-30-10-57-34.jpg" alt="Happy customer" onclick="openLightbox('testimonials',1)">
@@ -1010,6 +1034,9 @@ body{font-family:'Poppins',sans-serif;color:#1e293b;line-height:1.6;overflow-x:h
       <img src="assets/testimonials/PHOTO-2025-03-21-11-36-56.jpg" alt="Happy customer" onclick="openLightbox('testimonials',13)">
       <img src="assets/testimonials/PHOTO-2025-03-12-15-21-25.jpg" alt="Happy customer" onclick="openLightbox('testimonials',14)">
       <img src="assets/testimonials/PHOTO-2025-02-25-12-10-55.jpg" alt="Happy customer" onclick="openLightbox('testimonials',15)">
+    </div>
+      <button class="scroll-arrow prev" aria-label="Previous photos"><i class="fas fa-chevron-left"></i></button>
+      <button class="scroll-arrow next" aria-label="Next photos"><i class="fas fa-chevron-right"></i></button>
     </div>
   </div>
 </section>
@@ -1438,6 +1465,48 @@ document.addEventListener('DOMContentLoaded',function(){
     if(e.touches[0].clientY-startY>55){ collapse(); startY=null; }
   },{passive:true});
   box.addEventListener('touchend',function(){ startY=null; },{passive:true});
+});
+
+// SCROLLER ARROWS — the review card and photo rails scroll horizontally but
+// their scrollbars are hidden, so without these there's no affordance at all.
+// Animated by hand: scrollBy({behavior:'smooth'}) is unreliable and fights
+// scroll-snap:mandatory, so snapping is suspended for the duration instead.
+document.querySelectorAll('.scroller').forEach(function(wrap){
+  var rail=wrap.querySelector('.testimonial-scroll, .testimonial-photos-grid');
+  if(!rail) return;
+  var prev=wrap.querySelector('.scroll-arrow.prev'), next=wrap.querySelector('.scroll-arrow.next');
+  var busy=false;
+  function step(){
+    var first=rail.firstElementChild;
+    var w=first?first.getBoundingClientRect().width+24:0;
+    return Math.max(w||rail.clientWidth*0.8, rail.clientWidth*0.6);
+  }
+  function sync(){
+    var max=rail.scrollWidth-rail.clientWidth;
+    prev.disabled = rail.scrollLeft<=4;
+    next.disabled = rail.scrollLeft>=max-4;
+  }
+  function glide(delta){
+    var max=rail.scrollWidth-rail.clientWidth;
+    var from=rail.scrollLeft, to=Math.max(0,Math.min(max,from+delta));
+    // Prefer native smooth scrolling, but it is a no-op in some engines, so
+    // hard-set the position if nothing actually moved.
+    try{ rail.scrollTo({left:to,behavior:'smooth'}); }catch(e){}
+    setTimeout(function(){
+      if(Math.abs(rail.scrollLeft-from)<2){
+        var snap=rail.style.scrollSnapType;
+        rail.style.scrollSnapType='none';
+        rail.scrollLeft=to;
+        rail.style.scrollSnapType=snap;
+      }
+      sync();
+    },70);
+  }
+  prev.addEventListener('click',function(){glide(-step())});
+  next.addEventListener('click',function(){glide(step())});
+  rail.addEventListener('scroll',sync,{passive:true});
+  window.addEventListener('resize',sync);
+  sync();
 });
 
 // BEFORE/AFTER SLIDERS
